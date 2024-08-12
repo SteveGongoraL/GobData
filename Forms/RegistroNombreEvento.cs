@@ -1,22 +1,17 @@
 ﻿using GobData.Utilities;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using System.Configuration;
 
 namespace GobData
 {
     public partial class RegistroNombreEvento : Form
     {
-        string[] datosRegistro = new string[6];
+        private NombreEvento nombreEvento;
+
         public RegistroNombreEvento()
         {
             InitializeComponent();
+            string conexion = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+            nombreEvento = new NombreEvento(conexion);
         }
 
 
@@ -44,20 +39,29 @@ namespace GobData
             }
             else
             {
-                // Guardar la información
-                datosRegistro[0] = txtMesEvento.Text;
-                datosRegistro[1] = txtDiaEvento.Text;
-                datosRegistro[2] = txtEstadoEvento.Text;
-                datosRegistro[3] = txtConvocanteEvento.Text;
-                datosRegistro[4] = txtNumeroEvento.Text;
-                datosRegistro[5] = cbDivisionEvento.SelectedItem.ToString();
-
-                string resultado = "";
-                for (int y = 0; y < 6; y++)
+                // Recopilar los parametros necesarios
+                ParametrosNombreEvento parametrosNombreEvento = new ParametrosNombreEvento
                 {
-                    resultado += datosRegistro[y] + "\n";
+                    Mes = cbMesEvento.SelectedItem.ToString(),
+                    Dia = Convert.ToInt32(txtDiaEvento.Text),
+                    Estado = txtEstadoEvento.Text.ToUpper(),
+                    Convocante = txtConvocanteEvento.Text.ToUpper(),
+                    NumeroEvento = txtNumeroEvento.Text.ToUpper(),
+                    Division = cbDivisionEvento.SelectedItem.ToString()
+                };
+
+
+                // Guardar la información
+                try
+                {
+                    nombreEvento.InsertEventName(parametrosNombreEvento);
+                    MessageBox.Show("Operación realizada con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                MessageBox.Show(resultado);
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
+                
                 
                 // Cambiar de ventana
                 RegistrarEvento registrarEvento = new RegistrarEvento();

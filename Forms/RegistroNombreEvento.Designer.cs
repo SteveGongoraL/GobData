@@ -32,12 +32,12 @@
             btnGuardarRegistro = new ControlSTV.ButtonSTV();
             btnCancelarRegistro = new ControlSTV.ButtonSTV();
             panelPrincipal = new Panel();
+            cbMesEvento = new ComboBox();
             cbDivisionEvento = new ComboBox();
             txtNumeroEvento = new TextBox();
             txtConvocanteEvento = new TextBox();
             txtEstadoEvento = new TextBox();
             txtDiaEvento = new TextBox();
-            txtMesEvento = new TextBox();
             label6 = new Label();
             label5 = new Label();
             label4 = new Label();
@@ -92,12 +92,12 @@
             // panelPrincipal
             // 
             panelPrincipal.BackColor = Color.White;
+            panelPrincipal.Controls.Add(cbMesEvento);
             panelPrincipal.Controls.Add(cbDivisionEvento);
             panelPrincipal.Controls.Add(txtNumeroEvento);
             panelPrincipal.Controls.Add(txtConvocanteEvento);
             panelPrincipal.Controls.Add(txtEstadoEvento);
             panelPrincipal.Controls.Add(txtDiaEvento);
-            panelPrincipal.Controls.Add(txtMesEvento);
             panelPrincipal.Controls.Add(label6);
             panelPrincipal.Controls.Add(label5);
             panelPrincipal.Controls.Add(label4);
@@ -110,6 +110,16 @@
             panelPrincipal.Name = "panelPrincipal";
             panelPrincipal.Size = new Size(579, 381);
             panelPrincipal.TabIndex = 3;
+            // 
+            // cbMesEvento
+            // 
+            cbMesEvento.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbMesEvento.FormattingEnabled = true;
+            cbMesEvento.Items.AddRange(new object[] { "ENE", "FEB", "MAR", "ABR", "MAY", "JUN", "JUL", "AGO", "SEP", "OCT", "NOV", "DIC" });
+            cbMesEvento.Location = new Point(213, 57);
+            cbMesEvento.Name = "cbMesEvento";
+            cbMesEvento.Size = new Size(250, 23);
+            cbMesEvento.TabIndex = 1;
             // 
             // cbDivisionEvento
             // 
@@ -150,14 +160,6 @@
             txtDiaEvento.Size = new Size(250, 23);
             txtDiaEvento.TabIndex = 2;
             txtDiaEvento.KeyPress += txtDiaEvento_KeyPress;
-            // 
-            // txtMesEvento
-            // 
-            txtMesEvento.Location = new Point(213, 57);
-            txtMesEvento.Name = "txtMesEvento";
-            txtMesEvento.Size = new Size(250, 23);
-            txtMesEvento.TabIndex = 1;
-            txtMesEvento.KeyPress += onlyText_KeyPress;
             // 
             // label6
             // 
@@ -239,7 +241,6 @@
         private Label label5;
         private Label label4;
         private Label label3;
-        private TextBox txtMesEvento;
         private TextBox txtNumeroEvento;
         private TextBox txtConvocanteEvento;
         private TextBox txtEstadoEvento;
@@ -247,5 +248,6 @@
         private ControlSTV.ButtonSTV btnGuardarRegistro;
         private ControlSTV.ButtonSTV btnCancelarRegistro;
         private ComboBox cbDivisionEvento;
+        private ComboBox cbMesEvento;
     }
 }
