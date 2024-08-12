@@ -1,11 +1,11 @@
 CREATE TABLE NombreEvento(
     IdCliente INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    Mes VARCHAR(50) NOT NULL,
+    Mes VARCHAR(4) NOT NULL,
     Dia INT NOT NULL,
-    Estado VARCHAR(100) NOT NULL,
-    Convocante VARCHAR(100) NOT NULL,
-    Numero_Evento VARCHAR(100) NOT NULL,
-    Division VARCHAR(80) NOT NULL
+    Estado VARCHAR(50) NOT NULL,
+    Convocante VARCHAR(50) NOT NULL,
+    Numero_Evento VARCHAR(50) NOT NULL,
+    Division VARCHAR(15) NOT NULL
 );
 
 CREATE TABLE DocumentosEvento(
