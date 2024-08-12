@@ -1,0 +1,251 @@
+﻿namespace GobData
+{
+    partial class RegistroNombreEvento
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroNombreEvento));
+            btnGuardarRegistro = new ControlSTV.ButtonSTV();
+            btnCancelarRegistro = new ControlSTV.ButtonSTV();
+            panelPrincipal = new Panel();
+            cbDivisionEvento = new ComboBox();
+            txtNumeroEvento = new TextBox();
+            txtConvocanteEvento = new TextBox();
+            txtEstadoEvento = new TextBox();
+            txtDiaEvento = new TextBox();
+            txtMesEvento = new TextBox();
+            label6 = new Label();
+            label5 = new Label();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            panelPrincipal.SuspendLayout();
+            SuspendLayout();
+            // 
+            // btnGuardarRegistro
+            // 
+            btnGuardarRegistro.BackColor = Color.LightSteelBlue;
+            btnGuardarRegistro.BackgroundColor = Color.LightSteelBlue;
+            btnGuardarRegistro.BorderColor = Color.FromArgb(59, 167, 198);
+            btnGuardarRegistro.BorderRadius = 40;
+            btnGuardarRegistro.BorderSize = 2;
+            btnGuardarRegistro.Cursor = Cursors.Hand;
+            btnGuardarRegistro.FlatAppearance.BorderSize = 0;
+            btnGuardarRegistro.FlatStyle = FlatStyle.Flat;
+            btnGuardarRegistro.Font = new Font("Arial Narrow", 15.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnGuardarRegistro.ForeColor = Color.White;
+            btnGuardarRegistro.Location = new Point(294, 321);
+            btnGuardarRegistro.Name = "btnGuardarRegistro";
+            btnGuardarRegistro.Size = new Size(251, 45);
+            btnGuardarRegistro.TabIndex = 7;
+            btnGuardarRegistro.Text = "Guardar";
+            btnGuardarRegistro.TextColor = Color.White;
+            btnGuardarRegistro.UseVisualStyleBackColor = false;
+            btnGuardarRegistro.Click += btnGuardarRegistro_Click;
+            // 
+            // btnCancelarRegistro
+            // 
+            btnCancelarRegistro.BackColor = Color.FromArgb(254, 143, 143);
+            btnCancelarRegistro.BackgroundColor = Color.FromArgb(254, 143, 143);
+            btnCancelarRegistro.BorderColor = Color.FromArgb(239, 75, 94);
+            btnCancelarRegistro.BorderRadius = 40;
+            btnCancelarRegistro.BorderSize = 2;
+            btnCancelarRegistro.Cursor = Cursors.Hand;
+            btnCancelarRegistro.FlatAppearance.BorderSize = 0;
+            btnCancelarRegistro.FlatStyle = FlatStyle.Flat;
+            btnCancelarRegistro.Font = new Font("Arial Narrow", 15.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnCancelarRegistro.ForeColor = Color.White;
+            btnCancelarRegistro.Location = new Point(37, 321);
+            btnCancelarRegistro.Name = "btnCancelarRegistro";
+            btnCancelarRegistro.Size = new Size(251, 45);
+            btnCancelarRegistro.TabIndex = 8;
+            btnCancelarRegistro.Text = "Cancelar";
+            btnCancelarRegistro.TextColor = Color.White;
+            btnCancelarRegistro.UseVisualStyleBackColor = false;
+            btnCancelarRegistro.Click += btnCancelarRegistro_Click;
+            // 
+            // panelPrincipal
+            // 
+            panelPrincipal.BackColor = Color.White;
+            panelPrincipal.Controls.Add(cbDivisionEvento);
+            panelPrincipal.Controls.Add(txtNumeroEvento);
+            panelPrincipal.Controls.Add(txtConvocanteEvento);
+            panelPrincipal.Controls.Add(txtEstadoEvento);
+            panelPrincipal.Controls.Add(txtDiaEvento);
+            panelPrincipal.Controls.Add(txtMesEvento);
+            panelPrincipal.Controls.Add(label6);
+            panelPrincipal.Controls.Add(label5);
+            panelPrincipal.Controls.Add(label4);
+            panelPrincipal.Controls.Add(label3);
+            panelPrincipal.Controls.Add(label2);
+            panelPrincipal.Controls.Add(label1);
+            panelPrincipal.Controls.Add(btnCancelarRegistro);
+            panelPrincipal.Controls.Add(btnGuardarRegistro);
+            panelPrincipal.Location = new Point(120, 25);
+            panelPrincipal.Name = "panelPrincipal";
+            panelPrincipal.Size = new Size(579, 381);
+            panelPrincipal.TabIndex = 3;
+            // 
+            // cbDivisionEvento
+            // 
+            cbDivisionEvento.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbDivisionEvento.FormattingEnabled = true;
+            cbDivisionEvento.Items.AddRange(new object[] { "Clinicos", "Industria", "Investigacion", "Servicios" });
+            cbDivisionEvento.Location = new Point(213, 202);
+            cbDivisionEvento.Name = "cbDivisionEvento";
+            cbDivisionEvento.Size = new Size(250, 23);
+            cbDivisionEvento.TabIndex = 6;
+            // 
+            // txtNumeroEvento
+            // 
+            txtNumeroEvento.Location = new Point(213, 173);
+            txtNumeroEvento.Name = "txtNumeroEvento";
+            txtNumeroEvento.Size = new Size(250, 23);
+            txtNumeroEvento.TabIndex = 5;
+            // 
+            // txtConvocanteEvento
+            // 
+            txtConvocanteEvento.Location = new Point(213, 144);
+            txtConvocanteEvento.Name = "txtConvocanteEvento";
+            txtConvocanteEvento.Size = new Size(250, 23);
+            txtConvocanteEvento.TabIndex = 4;
+            // 
+            // txtEstadoEvento
+            // 
+            txtEstadoEvento.Location = new Point(213, 115);
+            txtEstadoEvento.Name = "txtEstadoEvento";
+            txtEstadoEvento.Size = new Size(250, 23);
+            txtEstadoEvento.TabIndex = 3;
+            txtEstadoEvento.KeyPress += onlyText_KeyPress;
+            // 
+            // txtDiaEvento
+            // 
+            txtDiaEvento.Location = new Point(213, 86);
+            txtDiaEvento.Name = "txtDiaEvento";
+            txtDiaEvento.Size = new Size(250, 23);
+            txtDiaEvento.TabIndex = 2;
+            txtDiaEvento.KeyPress += txtDiaEvento_KeyPress;
+            // 
+            // txtMesEvento
+            // 
+            txtMesEvento.Location = new Point(213, 57);
+            txtMesEvento.Name = "txtMesEvento";
+            txtMesEvento.Size = new Size(250, 23);
+            txtMesEvento.TabIndex = 1;
+            txtMesEvento.KeyPress += onlyText_KeyPress;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(158, 210);
+            label6.Name = "label6";
+            label6.Size = new Size(49, 15);
+            label6.TabIndex = 8;
+            label6.Text = "Division";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(101, 181);
+            label5.Name = "label5";
+            label5.Size = new Size(106, 15);
+            label5.TabIndex = 7;
+            label5.Text = "Numero de evento";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(136, 152);
+            label4.Name = "label4";
+            label4.Size = new Size(71, 15);
+            label4.TabIndex = 6;
+            label4.Text = "Convocante";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(165, 123);
+            label3.Name = "label3";
+            label3.Size = new Size(42, 15);
+            label3.TabIndex = 5;
+            label3.Text = "Estado";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(183, 94);
+            label2.Name = "label2";
+            label2.Size = new Size(24, 15);
+            label2.TabIndex = 4;
+            label2.Text = "Dia";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(178, 64);
+            label1.Name = "label1";
+            label1.Size = new Size(29, 15);
+            label1.TabIndex = 3;
+            label1.Text = "Mes";
+            // 
+            // RegistroNombreEvento
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(panelPrincipal);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            Name = "RegistroNombreEvento";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Nombre del Evento";
+            panelPrincipal.ResumeLayout(false);
+            panelPrincipal.PerformLayout();
+            ResumeLayout(false);
+        }
+
+        #endregion
+
+        private Panel panelPrincipal;
+        private Label label2;
+        private Label label1;
+        private Label label6;
+        private Label label5;
+        private Label label4;
+        private Label label3;
+        private TextBox txtMesEvento;
+        private TextBox txtNumeroEvento;
+        private TextBox txtConvocanteEvento;
+        private TextBox txtEstadoEvento;
+        private TextBox txtDiaEvento;
+        private ControlSTV.ButtonSTV btnGuardarRegistro;
+        private ControlSTV.ButtonSTV btnCancelarRegistro;
+        private ComboBox cbDivisionEvento;
+    }
+}
