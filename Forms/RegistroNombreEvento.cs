@@ -11,6 +11,7 @@ namespace GobData
         public RegistroNombreEvento()
         {
             InitializeComponent();
+            // Obtener los datos de la conexion a la Base de Datos
             string conexion = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
             nombreEvento = new NombreEvento(conexion);
         }
