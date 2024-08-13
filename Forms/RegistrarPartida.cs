@@ -1,8 +1,8 @@
 ﻿namespace GobData
 {
-    public partial class RegistrarEvento : Form
+    public partial class RegistrarPartida : Form
     {
-        public RegistrarEvento(string IdEvento)
+        public RegistrarPartida(string IdEvento)
         {
             InitializeComponent();
             ChecarIdEvento(IdEvento);

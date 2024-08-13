@@ -1,6 +1,6 @@
 ﻿namespace GobData
 {
-    partial class RegistrarEvento
+    partial class RegistrarPartida
     {
         /// <summary>
         /// Required designer variable.
@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistrarEvento));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistrarPartida));
             lblID = new Label();
             SuspendLayout();
             // 
             // lblID
             // 
             lblID.AutoSize = true;
-            lblID.Location = new Point(346, 111);
+            lblID.Location = new Point(116, 27);
             lblID.Name = "lblID";
             lblID.Size = new Size(38, 15);
             lblID.TabIndex = 0;
             lblID.Text = "label1";
             // 
-            // RegistrarEvento
+            // RegistrarPartida
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -50,9 +50,9 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
-            Name = "RegistrarEvento";
+            Name = "RegistrarPartida";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Registrar Evento";
+            Text = "Registrar Partida";
             ResumeLayout(false);
             PerformLayout();
         }

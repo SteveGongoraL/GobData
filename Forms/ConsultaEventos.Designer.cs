@@ -35,6 +35,7 @@
             cbConsultarEventos = new ComboBox();
             lblTituloConsultaEventos = new Label();
             dgvConsultarEventos = new DataGridView();
+            txtBuscarEventos = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvConsultarEventos).BeginInit();
             SuspendLayout();
@@ -82,6 +83,7 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(txtBuscarEventos);
             panel1.Controls.Add(cbConsultarEventos);
             panel1.Controls.Add(lblTituloConsultaEventos);
             panel1.Controls.Add(dgvConsultarEventos);
@@ -97,9 +99,9 @@
             cbConsultarEventos.DropDownStyle = ComboBoxStyle.DropDownList;
             cbConsultarEventos.FormattingEnabled = true;
             cbConsultarEventos.Items.AddRange(new object[] { "Clinicos", "Industria", "Investigacion", "Servicios", "Todos" });
-            cbConsultarEventos.Location = new Point(503, 97);
+            cbConsultarEventos.Location = new Point(481, 97);
             cbConsultarEventos.Name = "cbConsultarEventos";
-            cbConsultarEventos.Size = new Size(83, 23);
+            cbConsultarEventos.Size = new Size(105, 23);
             cbConsultarEventos.TabIndex = 7;
             cbConsultarEventos.SelectedIndexChanged += cbConsultarEventos_SelectedIndexChanged;
             // 
@@ -127,6 +129,14 @@
             dgvConsultarEventos.TabIndex = 5;
             dgvConsultarEventos.SelectionChanged += dgvConsultarEventos_SelectionChanged;
             // 
+            // txtBuscarEventos
+            // 
+            txtBuscarEventos.Location = new Point(67, 97);
+            txtBuscarEventos.Name = "txtBuscarEventos";
+            txtBuscarEventos.Size = new Size(408, 23);
+            txtBuscarEventos.TabIndex = 8;
+            txtBuscarEventos.TextChanged += txtBuscarEventos_TextChanged;
+            // 
             // ConsultaEventos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -153,5 +163,6 @@
         private ComboBox cbConsultarEventos;
         private Label lblTituloConsultaEventos;
         private DataGridView dgvConsultarEventos;
+        private TextBox txtBuscarEventos;
     }
 }

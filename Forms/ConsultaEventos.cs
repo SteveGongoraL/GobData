@@ -29,8 +29,8 @@ namespace GobData
         }
         private void btnConsultarRegistro_Click(object sender, EventArgs e)
         {
-            RegistrarEvento registrarEvento = new RegistrarEvento(IdEvento);
-            registrarEvento.Show();
+            RegistrarPartida registrarPartida = new RegistrarPartida(IdEvento);
+            registrarPartida.Show();
             this.Hide();
         }
 
@@ -96,6 +96,23 @@ namespace GobData
                 DataGridViewRow selectedRow = dgvConsultarEventos.SelectedRows[0];
                 // Obtiene el valor de la columna 1
                 IdEvento = Convert.ToString(selectedRow.Cells[0].Value);
+            }
+        }
+
+
+        // Buscador por palabra
+        private void txtBuscarEventos_TextChanged(object sender, EventArgs e)
+        {
+            string filtradoEventos = lblTituloConsultaEventos.Text;
+            string buscadorEventos = txtBuscarEventos.Text.ToUpper();
+
+            if(filtradoEventos == "Todos")
+            {
+                // Sin where
+            }
+            else
+            {
+                // Con where
             }
         }
     }
