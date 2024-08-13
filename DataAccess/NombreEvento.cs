@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace GobData
 {
@@ -34,6 +35,66 @@ namespace GobData
                 }
             }
             return insertedId;
+        }
+
+
+        public DataTable GetAllEventName()
+        {
+            DataTable dataTable = new DataTable();
+            using (MySqlConnection conexionBD = new MySqlConnection(connectionString))
+            {
+                string consulta = "SELECT * FROM NombreEvento;";
+                try
+                {
+                    conexionBD.Open();
+                    MySqlCommand comando = new MySqlCommand(consulta, conexionBD);
+                    MySqlDataReader reader = comando.ExecuteReader();
+                    dataTable.Load(reader);
+                }
+                catch (MySqlException ex)
+                {
+                    // Manejo de excepciones específicas de MySQL
+                    throw new Exception("Error al cargar datos desde MySQL: " + ex.Message);
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Error al cargar datos: " + ex.Message);
+                }
+            }
+            return dataTable;
+        }
+
+
+        public DataTable GetSpecificEventName(string divisionSeleccionada)
+        {
+            DataTable dataTable = new DataTable();
+            using (MySqlConnection conexionBD = new MySqlConnection(connectionString))
+            {
+                string consulta = "SELECT * FROM NombreEvento WHERE Division = @divisionSeleccionada;";
+                try
+                {
+                    using (MySqlCommand comando = new MySqlCommand(consulta, conexionBD))
+                    {
+                        comando.Parameters.Add("@divisionSeleccionada", MySqlDbType.VarChar).Value = divisionSeleccionada;
+                        conexionBD.Open();
+                        using (MySqlDataReader reader = comando.ExecuteReader())
+                        {
+                            dataTable.Load(reader);
+                        }
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    // Manejo de excepciones específicas de MySQL
+                    throw new Exception("Error al cargar datos desde MySQL: " + ex.Message);
+                }
+                catch (Exception ex)
+                {
+                    // Manejo de otras excepciones
+                    throw new Exception("Error al cargar datos: " + ex.Message);
+                }
+            }
+            return dataTable;
         }
     }
 }
