@@ -12,6 +12,7 @@ namespace GobData
             this.connectionString = connectionString;
         }
 
+        // Insertar la informacion para el evento
         // Los parametros vienen del modelo "ParametrosNombreEvento"
         public int InsertEventName(ParametrosNombreEvento parametrosNombreEvento)
         {
@@ -37,7 +38,7 @@ namespace GobData
             return insertedId;
         }
 
-
+        // Mostrar todos los eventos
         public DataTable GetAllEventName()
         {
             DataTable dataTable = new DataTable();
@@ -64,7 +65,7 @@ namespace GobData
             return dataTable;
         }
 
-
+        // Filtrar los evento por una division en especifico
         public DataTable GetSpecificEventName(string divisionSeleccionada)
         {
             DataTable dataTable = new DataTable();
@@ -96,5 +97,9 @@ namespace GobData
             }
             return dataTable;
         }
+
+
+        // Mostrar todos los eventos que contengan una palabra en especifico
+
     }
 }
