@@ -50,7 +50,7 @@
             btnCancelarConsulta.FlatStyle = FlatStyle.Flat;
             btnCancelarConsulta.Font = new Font("Arial Narrow", 15.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
             btnCancelarConsulta.ForeColor = Color.White;
-            btnCancelarConsulta.Location = new Point(335, 370);
+            btnCancelarConsulta.Location = new Point(67, 370);
             btnCancelarConsulta.Name = "btnCancelarConsulta";
             btnCancelarConsulta.Size = new Size(251, 45);
             btnCancelarConsulta.TabIndex = 4;
@@ -70,7 +70,7 @@
             btnConsultarRegistro.FlatStyle = FlatStyle.Flat;
             btnConsultarRegistro.Font = new Font("Arial Narrow", 15.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
             btnConsultarRegistro.ForeColor = Color.White;
-            btnConsultarRegistro.Location = new Point(67, 370);
+            btnConsultarRegistro.Location = new Point(335, 370);
             btnConsultarRegistro.Name = "btnConsultarRegistro";
             btnConsultarRegistro.Size = new Size(251, 45);
             btnConsultarRegistro.TabIndex = 3;
@@ -117,9 +117,14 @@
             // 
             dgvConsultarEventos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvConsultarEventos.Location = new Point(67, 143);
+            dgvConsultarEventos.MultiSelect = false;
             dgvConsultarEventos.Name = "dgvConsultarEventos";
+            dgvConsultarEventos.ReadOnly = true;
+            dgvConsultarEventos.RowHeadersVisible = false;
+            dgvConsultarEventos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvConsultarEventos.Size = new Size(519, 209);
             dgvConsultarEventos.TabIndex = 5;
+            dgvConsultarEventos.SelectionChanged += dgvConsultarEventos_SelectionChanged;
             // 
             // ConsultaEventos
             // 
