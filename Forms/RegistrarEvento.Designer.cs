@@ -29,13 +29,24 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistrarEvento));
+            lblID = new Label();
             SuspendLayout();
+            // 
+            // lblID
+            // 
+            lblID.AutoSize = true;
+            lblID.Location = new Point(346, 111);
+            lblID.Name = "lblID";
+            lblID.Size = new Size(38, 15);
+            lblID.TabIndex = 0;
+            lblID.Text = "label1";
             // 
             // RegistrarEvento
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(lblID);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
@@ -43,8 +54,11 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Registrar Evento";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label lblID;
     }
 }

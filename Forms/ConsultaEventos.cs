@@ -26,9 +26,14 @@ namespace GobData
 
         private void btnConsultarRegistro_Click(object sender, EventArgs e)
         {
-            RegistrarEvento registrarEvento = new RegistrarEvento();
+            RegistrarEvento registrarEvento = new RegistrarEvento("5");
             registrarEvento.Show();
             this.Hide();
+        }
+
+        private void cbConsultarEventos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblTituloConsultaEventos.Text = cbConsultarEventos.SelectedItem.ToString();
         }
     }
 }

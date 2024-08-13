@@ -6,6 +6,7 @@ namespace GobData
     public partial class RegistroNombreEvento : Form
     {
         private NombreEvento nombreEvento;
+        int IdEvento;
 
         public RegistroNombreEvento()
         {
@@ -54,7 +55,7 @@ namespace GobData
                 // Guardar la información
                 try
                 {
-                    nombreEvento.InsertEventName(parametrosNombreEvento);
+                    IdEvento = nombreEvento.InsertEventName(parametrosNombreEvento);
                     MessageBox.Show("Operación realizada con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
@@ -64,7 +65,7 @@ namespace GobData
                 
                 
                 // Cambiar de ventana
-                RegistrarEvento registrarEvento = new RegistrarEvento();
+                RegistrarEvento registrarEvento = new RegistrarEvento(Convert.ToString(IdEvento));
                 registrarEvento.Show();
                 this.Hide();
             }

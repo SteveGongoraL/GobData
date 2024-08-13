@@ -1,20 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace GobData
+﻿namespace GobData
 {
     public partial class RegistrarEvento : Form
     {
-        public RegistrarEvento()
+        public RegistrarEvento(string IdEvento)
         {
             InitializeComponent();
+            ChecarIdEvento(IdEvento);
+        }
+
+        private void ChecarIdEvento(string idEvento)
+        {
+            if (idEvento != null)
+            {
+                lblID.Text = idEvento;
+            }
         }
     }
 }
