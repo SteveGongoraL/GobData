@@ -34,7 +34,7 @@ namespace GobData
             this.Hide();
         }
 
-        
+
         // Llenar el DGView con la información de todos los nombres de eventos
         private void CargarDatosDGV()
         {
@@ -62,7 +62,7 @@ namespace GobData
             string divisionEventoSeleccionada = cbConsultarEventos.SelectedItem.ToString();
             lblTituloConsultaEventos.Text = divisionEventoSeleccionada;
 
-            if(divisionEventoSeleccionada != "Todos")
+            if (divisionEventoSeleccionada != "Todos")
             {
                 try
                 {
@@ -90,7 +90,7 @@ namespace GobData
         // Sacar el ID de la fila que esta seleccionada
         private void dgvConsultarEventos_SelectionChanged(object sender, EventArgs e)
         {
-            if(dgvConsultarEventos.SelectedRows.Count > 0)
+            if (dgvConsultarEventos.SelectedRows.Count > 0)
             {
                 // Obtiene la fila seleccionada
                 DataGridViewRow selectedRow = dgvConsultarEventos.SelectedRows[0];

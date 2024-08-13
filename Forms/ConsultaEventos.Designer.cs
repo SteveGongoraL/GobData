@@ -97,9 +97,9 @@
             cbConsultarEventos.DropDownStyle = ComboBoxStyle.DropDownList;
             cbConsultarEventos.FormattingEnabled = true;
             cbConsultarEventos.Items.AddRange(new object[] { "Clinicos", "Industria", "Investigacion", "Servicios", "Todos" });
-            cbConsultarEventos.Location = new Point(479, 97);
+            cbConsultarEventos.Location = new Point(503, 97);
             cbConsultarEventos.Name = "cbConsultarEventos";
-            cbConsultarEventos.Size = new Size(107, 23);
+            cbConsultarEventos.Size = new Size(83, 23);
             cbConsultarEventos.TabIndex = 7;
             cbConsultarEventos.SelectedIndexChanged += cbConsultarEventos_SelectedIndexChanged;
             // 
@@ -115,6 +115,7 @@
             // 
             // dgvConsultarEventos
             // 
+            dgvConsultarEventos.AllowUserToAddRows = false;
             dgvConsultarEventos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvConsultarEventos.Location = new Point(67, 143);
             dgvConsultarEventos.MultiSelect = false;
