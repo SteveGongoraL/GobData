@@ -12,8 +12,10 @@ namespace GobData
         }
 
         // Los parametros vienen del modelo "ParametrosNombreEvento"
-        public void InsertEventName(ParametrosNombreEvento parametrosNombreEvento)
+        public int InsertEventName(ParametrosNombreEvento parametrosNombreEvento)
         {
+            int insertedId = 0;
+
             using (MySqlConnection conexionBD = new MySqlConnection(connectionString))
             {
                 string consulta = "INSERT INTO NombreEvento(Mes, Dia, Estado, Convocante, Numero_Evento, Division) VALUES (@Mes, @Dia, @Estado, @Convocante, @Numero_Evento, @Division);";
@@ -28,8 +30,10 @@ namespace GobData
 
                     conexionBD.Open();
                     comando.ExecuteNonQuery();
+                    insertedId = (int)comando.LastInsertedId;
                 }
             }
+            return insertedId;
         }
     }
 }
