@@ -38,45 +38,31 @@ namespace GobData
             return insertedId;
         }
 
-        // Mostrar todos los eventos
-        public DataTable GetAllEventName()
-        {
-            DataTable dataTable = new DataTable();
-            using (MySqlConnection conexionBD = new MySqlConnection(connectionString))
-            {
-                string consulta = "SELECT * FROM NombreEvento;";
-                try
-                {
-                    conexionBD.Open();
-                    MySqlCommand comando = new MySqlCommand(consulta, conexionBD);
-                    MySqlDataReader reader = comando.ExecuteReader();
-                    dataTable.Load(reader);
-                }
-                catch (MySqlException ex)
-                {
-                    // Manejo de excepciones específicas de MySQL
-                    throw new Exception("Error al cargar datos desde MySQL: " + ex.Message);
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("Error al cargar datos: " + ex.Message);
-                }
-            }
-            return dataTable;
-        }
-
-        // Filtrar los evento por una division en especifico
+        // Mostrar o filtrar todos los eventos
         public DataTable GetSpecificEventName(string divisionSeleccionada)
         {
             DataTable dataTable = new DataTable();
             using (MySqlConnection conexionBD = new MySqlConnection(connectionString))
             {
-                string consulta = "SELECT * FROM NombreEvento WHERE Division = @divisionSeleccionada;";
+                string queryConsulta;
+
+                if (divisionSeleccionada != "Todos")
+                {
+                    queryConsulta = "SELECT * FROM NombreEvento WHERE Division = @divisionSeleccionada;";
+                }
+                else
+                {
+                    queryConsulta = "SELECT * FROM NombreEvento;";
+                }
+
                 try
                 {
-                    using (MySqlCommand comando = new MySqlCommand(consulta, conexionBD))
+                    using (MySqlCommand comando = new MySqlCommand(queryConsulta, conexionBD))
                     {
-                        comando.Parameters.Add("@divisionSeleccionada", MySqlDbType.VarChar).Value = divisionSeleccionada;
+                        if (divisionSeleccionada != "Todos")
+                        {
+                            comando.Parameters.Add("@divisionSeleccionada", MySqlDbType.VarChar).Value = divisionSeleccionada;
+                        }
                         conexionBD.Open();
                         using (MySqlDataReader reader = comando.ExecuteReader())
                         {
@@ -97,9 +83,5 @@ namespace GobData
             }
             return dataTable;
         }
-
-
-        // Mostrar todos los eventos que contengan una palabra en especifico
-
     }
 }
