@@ -1,4 +1,5 @@
-﻿using System.Configuration;
+﻿using GobData.Utilities;
+using System.Configuration;
 using System.Data;
 using System.Windows.Forms;
 
@@ -7,6 +8,7 @@ namespace GobData
     public partial class ConsultaEventos : Form
     {
         private NombreEvento nombreEvento;
+        private BuscarDataService buscarDataService;
         string IdEvento;
 
         public ConsultaEventos()
@@ -15,6 +17,7 @@ namespace GobData
             // Obtener los datos de la conexion a la Base de Datos
             string conexion = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
             nombreEvento = new NombreEvento(conexion);
+            buscarDataService = new BuscarDataService(conexion);
             // Llamar al metodo para llenar el DGV por defecto
             CargarDatosDGV();
         }
@@ -35,19 +38,31 @@ namespace GobData
         }
 
 
-        // Llenar el DGView con la información de todos los nombres de eventos
+        // Llenar el DGView con la información de los eventos
         private void CargarDatosDGV()
         {
+            string divisionEventoSeleccionada;
+
+            // Validar que se haya seleccionado una division
+            if(cbConsultarEventos.SelectedItem != null)
+            {
+                divisionEventoSeleccionada = cbConsultarEventos.SelectedItem.ToString();
+            }
+            else
+            {
+                divisionEventoSeleccionada = "Todos";
+            }
+
+            // Poner el titulo de la pantalla
+            lblTituloConsultaEventos.Text = divisionEventoSeleccionada;
+
+            // Consultar los datos
             try
             {
-                DataTable dtAllEventName = nombreEvento.GetAllEventName();
+                DataTable dtAllEventName = nombreEvento.GetSpecificEventName(divisionEventoSeleccionada);
                 dgvConsultarEventos.DataSource = dtAllEventName;
 
-                // Ocultar la columna del ID
-                if (dgvConsultarEventos.Columns.Count > 0)
-                {
-                    dgvConsultarEventos.Columns[0].Visible = false;
-                }
+                FormUtilities.OcultarPrimeraColumna(dgvConsultarEventos);
             }
             catch (Exception ex)
             {
@@ -59,31 +74,11 @@ namespace GobData
         // Mostrar información dependiendo del valor seleccionado en el combobox
         private void cbConsultarEventos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string divisionEventoSeleccionada = cbConsultarEventos.SelectedItem.ToString();
-            lblTituloConsultaEventos.Text = divisionEventoSeleccionada;
+            // Limpiar el txtBuscarEventos al cambiar de Division
+            txtBuscarEventos.Text = "";
 
-            if (divisionEventoSeleccionada != "Todos")
-            {
-                try
-                {
-                    DataTable dtAllEventName = nombreEvento.GetSpecificEventName(divisionEventoSeleccionada);
-                    dgvConsultarEventos.DataSource = dtAllEventName;
-
-                    // Ocultar la columna del ID
-                    if (dgvConsultarEventos.Columns.Count > 0)
-                    {
-                        dgvConsultarEventos.Columns[0].Visible = false;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error: {ex.Message}");
-                }
-            }
-            else
-            {
-                CargarDatosDGV();
-            }
+            // Cargar la información cada que se cambia de Division
+            CargarDatosDGV();
         }
 
 
@@ -100,19 +95,22 @@ namespace GobData
         }
 
 
-        // Buscador por palabra
+        // Buscador los eventos que contengan una palabra en especifico
         private void txtBuscarEventos_TextChanged(object sender, EventArgs e)
         {
             string filtradoEventos = lblTituloConsultaEventos.Text;
             string buscadorEventos = txtBuscarEventos.Text.ToUpper();
 
-            if(filtradoEventos == "Todos")
+            try
             {
-                // Sin where
+                DataTable dtSearchSpecificEventName = buscarDataService.SearchSpecificEventName(filtradoEventos, buscadorEventos);
+                dgvConsultarEventos.DataSource = dtSearchSpecificEventName;
+
+                FormUtilities.OcultarPrimeraColumna(dgvConsultarEventos);
             }
-            else
+            catch (Exception ex)
             {
-                // Con where
+                MessageBox.Show($"Error: {ex.Message}");
             }
         }
     }
