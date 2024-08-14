@@ -2,6 +2,7 @@
 {
     public static class FormUtilities
     {
+        // Validar que todos los textbox esten llenos
         public static bool ValidarTextBox(Control parent)
         {
             bool allFilled = true;
@@ -21,6 +22,7 @@
             return allFilled;
         }
 
+        // Verficar que los combobox tengan un valor seleccionado
         public static bool ValidarComboBox(Control parent)
         {
             bool allSelected = true;
@@ -40,6 +42,7 @@
             return allSelected;
         }
 
+        // Limpiar los textbox
         public static void LimpiarTextBox(Control parent)
         {
             foreach (Control control in parent.Controls)
@@ -48,6 +51,15 @@
                 {
                     txtBox.Clear();
                 }
+            }
+        }
+
+        // Ocultar la primera columna de un data grid view
+        public static void OcultarPrimeraColumna(DataGridView dgv)
+        {
+            if (dgv.Columns.Count > 0)
+            {
+                dgv.Columns[0].Visible = false;
             }
         }
     }
