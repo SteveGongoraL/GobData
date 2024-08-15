@@ -15,5 +15,12 @@
                 lblID.Text = idEvento;
             }
         }
+
+        private void btnFinalizarPartida_Click(object sender, EventArgs e)
+        {
+            Home home = new Home();
+            home.Show();
+            this.Hide();
+        }
     }
 }
