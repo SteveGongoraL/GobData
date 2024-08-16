@@ -151,7 +151,7 @@
             txtEstadoEvento.Name = "txtEstadoEvento";
             txtEstadoEvento.Size = new Size(250, 23);
             txtEstadoEvento.TabIndex = 3;
-            txtEstadoEvento.KeyPress += onlyText_KeyPress;
+            txtEstadoEvento.KeyPress += txtSoloTexto_KeyPress;
             // 
             // txtDiaEvento
             // 
@@ -159,7 +159,7 @@
             txtDiaEvento.Name = "txtDiaEvento";
             txtDiaEvento.Size = new Size(250, 23);
             txtDiaEvento.TabIndex = 2;
-            txtDiaEvento.KeyPress += txtDiaEvento_KeyPress;
+            txtDiaEvento.KeyPress += txtSoloNumeros_KeyPress;
             // 
             // label6
             // 

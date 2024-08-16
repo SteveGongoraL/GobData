@@ -74,19 +74,13 @@ namespace GobData
 
 
         // Restricciones de datos en los textbox
-        private void onlyText_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtSoloNumeros_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
-            {
-                e.Handled = true;
-            }
+            TextBoxValidator.AllowOnlyIntegers(e);
         }
-        private void txtDiaEvento_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtSoloTexto_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
+            TextBoxValidator.AllowOnlyString(e);
         }
     }
 }

@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultarPartida));
             lblID = new Label();
             btnCancelarPartida = new ControlSTV.ButtonSTV();
-            btnGuardarPartida = new ControlSTV.ButtonSTV();
+            btnAgregarPartida = new ControlSTV.ButtonSTV();
             btnFinalizarPartida = new ControlSTV.ButtonSTV();
             dataGridView1 = new DataGridView();
             groupBox1 = new GroupBox();
@@ -71,24 +71,25 @@
             btnCancelarPartida.TextColor = Color.White;
             btnCancelarPartida.UseVisualStyleBackColor = false;
             // 
-            // btnGuardarPartida
+            // btnAgregarPartida
             // 
-            btnGuardarPartida.BackColor = Color.LightSteelBlue;
-            btnGuardarPartida.BackgroundColor = Color.LightSteelBlue;
-            btnGuardarPartida.BorderColor = Color.FromArgb(59, 167, 198);
-            btnGuardarPartida.BorderRadius = 36;
-            btnGuardarPartida.BorderSize = 2;
-            btnGuardarPartida.FlatAppearance.BorderSize = 0;
-            btnGuardarPartida.FlatStyle = FlatStyle.Flat;
-            btnGuardarPartida.Font = new Font("Arial Narrow", 11.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            btnGuardarPartida.ForeColor = Color.White;
-            btnGuardarPartida.Location = new Point(315, 242);
-            btnGuardarPartida.Name = "btnGuardarPartida";
-            btnGuardarPartida.Size = new Size(82, 36);
-            btnGuardarPartida.TabIndex = 5;
-            btnGuardarPartida.Text = "Guardar";
-            btnGuardarPartida.TextColor = Color.White;
-            btnGuardarPartida.UseVisualStyleBackColor = false;
+            btnAgregarPartida.BackColor = Color.LightSteelBlue;
+            btnAgregarPartida.BackgroundColor = Color.LightSteelBlue;
+            btnAgregarPartida.BorderColor = Color.FromArgb(59, 167, 198);
+            btnAgregarPartida.BorderRadius = 36;
+            btnAgregarPartida.BorderSize = 2;
+            btnAgregarPartida.FlatAppearance.BorderSize = 0;
+            btnAgregarPartida.FlatStyle = FlatStyle.Flat;
+            btnAgregarPartida.Font = new Font("Arial Narrow", 11.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnAgregarPartida.ForeColor = Color.White;
+            btnAgregarPartida.Location = new Point(315, 242);
+            btnAgregarPartida.Name = "btnAgregarPartida";
+            btnAgregarPartida.Size = new Size(82, 36);
+            btnAgregarPartida.TabIndex = 5;
+            btnAgregarPartida.Text = "Agregar";
+            btnAgregarPartida.TextColor = Color.White;
+            btnAgregarPartida.UseVisualStyleBackColor = false;
+            btnAgregarPartida.Click += btnAgregarPartida_Click;
             // 
             // btnFinalizarPartida
             // 
@@ -123,7 +124,7 @@
             // 
             groupBox1.BackColor = Color.White;
             groupBox1.Controls.Add(dataGridView1);
-            groupBox1.Controls.Add(btnGuardarPartida);
+            groupBox1.Controls.Add(btnAgregarPartida);
             groupBox1.Controls.Add(btnCancelarPartida);
             groupBox1.Location = new Point(58, 43);
             groupBox1.Name = "groupBox1";
@@ -179,7 +180,7 @@
 
         private Label lblID;
         private ControlSTV.ButtonSTV btnCancelarPartida;
-        private ControlSTV.ButtonSTV btnGuardarPartida;
+        private ControlSTV.ButtonSTV btnAgregarPartida;
         private ControlSTV.ButtonSTV btnFinalizarPartida;
         private DataGridView dataGridView1;
         private GroupBox groupBox1;
