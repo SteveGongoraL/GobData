@@ -66,7 +66,7 @@ namespace GobData
                 
                 
                 // Cambiar de ventana
-                RegistrarPartida registrarPartida = new RegistrarPartida(Convert.ToString(IdEvento));
+                ConsultarPartida registrarPartida = new ConsultarPartida(Convert.ToString(IdEvento));
                 registrarPartida.Show();
                 this.Hide();
             }

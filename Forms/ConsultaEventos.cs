@@ -32,7 +32,7 @@ namespace GobData
         }
         private void btnConsultarRegistro_Click(object sender, EventArgs e)
         {
-            RegistrarPartida registrarPartida = new RegistrarPartida(IdEvento);
+            ConsultarPartida registrarPartida = new ConsultarPartida(IdEvento);
             registrarPartida.Show();
             this.Hide();
         }
