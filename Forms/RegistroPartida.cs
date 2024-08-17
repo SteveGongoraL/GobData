@@ -1,16 +1,20 @@
 ﻿using GobData.Utilities;
-using Org.BouncyCastle.Asn1.Ocsp;
+using System.Configuration;
 
 namespace GobData
 {
     public partial class RegistroPartida : Form
     {
+        private Partidas partidas;
         string IdEventoPartida;
 
         public RegistroPartida(string IdEvento)
         {
             InitializeComponent();
             ObtenerIdEvento(IdEvento);
+            // Obtener los datos de la conexion a la Base de Datos
+            string conexion = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+            partidas = new Partidas(conexion);
         }
 
         // Obtener el Id del evento donde se guardara la partida
@@ -29,6 +33,11 @@ namespace GobData
             {
                 MessageBox.Show("Todos los campos deben estar llenos.", "Error en Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            // Validar que los combobox esten seleccionados
+            else if (!FormUtilities.ValidarComboBox(panelPrincipal))
+            {
+                MessageBox.Show("Debes seleccionar una opción en todos los ComboBox.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             else
             {
                 // Recopilar los parametros necesarios
@@ -39,15 +48,15 @@ namespace GobData
                 ParametrosPartida parametrosPartida = new ParametrosPartida
                 {
                     NumeroPartida = Convert.ToInt32(txtNumeroPartida.Text),
-                    Descripcion = txtDescripcionPartida.Text,
+                    Descripcion = txtDescripcionPartida.Text.ToUpper(),
                     CantidadMinima = Convert.ToInt32(txtCantidadMinimo.Text),
                     CantidadMaxima = Convert.ToInt32(txtCantidadMaxima.Text),
-                    UnidadMedida = txtMedida.Text,
-                    SeOfrece = txtSeOfrece.Text,
-                    Marca = txtMarca.Text,
-                    Catalogo = txtCatalogo.Text,
-                    PaisOrigen = txtPaisOrigen.Text,
-                    Fabricante = txtFabricante.Text,
+                    UnidadMedida = txtMedida.Text.ToUpper(),
+                    SeOfrece = txtSeOfrece.Text.ToUpper(),
+                    Marca = txtMarca.Text.ToUpper(),
+                    Catalogo = txtCatalogo.Text.ToUpper(),
+                    PaisOrigen = txtPaisOrigen.Text.ToUpper(),
+                    Fabricante = txtFabricante.Text.ToUpper(),
                     CostoUnitario = Convert.ToDecimal(txtCostoUnitario.Text),
                     Moneda = cbMoneda.SelectedItem.ToString(),
                     CostoNacional = costoMonedaNacional,
@@ -55,6 +64,17 @@ namespace GobData
                     TotalUnitario = precioUnitarioTotal,
                     IdNombreEvento = Convert.ToInt32(IdEventoPartida)
                 };
+
+                // Guardar la información
+                try
+                {
+                    partidas.InsertPartida(parametrosPartida);
+                    MessageBox.Show("Operación realizada con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
 
 
                 // Cambiar de ventana
