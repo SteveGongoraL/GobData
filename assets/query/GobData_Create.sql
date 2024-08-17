@@ -23,7 +23,7 @@ CREATE TABLE PartidasEvento(
     Descripcion VARCHAR(300) NOT NULL,
     Cant_Min INT NOT NULL,
     Cant_Max INT NOT NULL,
-    Unidad_Medida VARCHAR(10) NOT NULL,
+    Unidad_Medida VARCHAR(25) NOT NULL,
     Se_Ofrece VARCHAR(300) NOT NULL,
     Marca VARCHAR(50) NOT NULL,
     Catalogo VARCHAR(50) NOT NULL,
