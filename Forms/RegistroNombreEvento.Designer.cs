@@ -32,6 +32,7 @@
             btnGuardarRegistro = new ControlSTV.ButtonSTV();
             btnCancelarRegistro = new ControlSTV.ButtonSTV();
             panelPrincipal = new Panel();
+            label7 = new Label();
             cbMesEvento = new ComboBox();
             cbDivisionEvento = new ComboBox();
             txtNumeroEvento = new TextBox();
@@ -44,6 +45,8 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
+            panelstv1 = new ControlSTV.PanelSTV();
+            panel2 = new Panel();
             panelPrincipal.SuspendLayout();
             SuspendLayout();
             // 
@@ -57,14 +60,14 @@
             btnGuardarRegistro.Cursor = Cursors.Hand;
             btnGuardarRegistro.FlatAppearance.BorderSize = 0;
             btnGuardarRegistro.FlatStyle = FlatStyle.Flat;
-            btnGuardarRegistro.Font = new Font("Arial Narrow", 15.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            btnGuardarRegistro.ForeColor = Color.White;
-            btnGuardarRegistro.Location = new Point(294, 321);
+            btnGuardarRegistro.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnGuardarRegistro.ForeColor = Color.Black;
+            btnGuardarRegistro.Location = new Point(264, 302);
             btnGuardarRegistro.Name = "btnGuardarRegistro";
-            btnGuardarRegistro.Size = new Size(251, 45);
+            btnGuardarRegistro.Size = new Size(195, 45);
             btnGuardarRegistro.TabIndex = 7;
             btnGuardarRegistro.Text = "Guardar";
-            btnGuardarRegistro.TextColor = Color.White;
+            btnGuardarRegistro.TextColor = Color.Black;
             btnGuardarRegistro.UseVisualStyleBackColor = false;
             btnGuardarRegistro.Click += btnGuardarRegistro_Click;
             // 
@@ -78,20 +81,21 @@
             btnCancelarRegistro.Cursor = Cursors.Hand;
             btnCancelarRegistro.FlatAppearance.BorderSize = 0;
             btnCancelarRegistro.FlatStyle = FlatStyle.Flat;
-            btnCancelarRegistro.Font = new Font("Arial Narrow", 15.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            btnCancelarRegistro.ForeColor = Color.White;
-            btnCancelarRegistro.Location = new Point(37, 321);
+            btnCancelarRegistro.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnCancelarRegistro.ForeColor = Color.Black;
+            btnCancelarRegistro.Location = new Point(65, 302);
             btnCancelarRegistro.Name = "btnCancelarRegistro";
-            btnCancelarRegistro.Size = new Size(251, 45);
+            btnCancelarRegistro.Size = new Size(195, 45);
             btnCancelarRegistro.TabIndex = 8;
             btnCancelarRegistro.Text = "Cancelar";
-            btnCancelarRegistro.TextColor = Color.White;
+            btnCancelarRegistro.TextColor = Color.Black;
             btnCancelarRegistro.UseVisualStyleBackColor = false;
             btnCancelarRegistro.Click += btnCancelarRegistro_Click;
             // 
             // panelPrincipal
             // 
-            panelPrincipal.BackColor = Color.White;
+            panelPrincipal.BackColor = SystemColors.Control;
+            panelPrincipal.Controls.Add(label7);
             panelPrincipal.Controls.Add(cbMesEvento);
             panelPrincipal.Controls.Add(cbDivisionEvento);
             panelPrincipal.Controls.Add(txtNumeroEvento);
@@ -106,48 +110,61 @@
             panelPrincipal.Controls.Add(label1);
             panelPrincipal.Controls.Add(btnCancelarRegistro);
             panelPrincipal.Controls.Add(btnGuardarRegistro);
-            panelPrincipal.Location = new Point(120, 25);
+            panelPrincipal.Location = new Point(56, 24);
             panelPrincipal.Name = "panelPrincipal";
-            panelPrincipal.Size = new Size(579, 381);
+            panelPrincipal.Size = new Size(538, 362);
             panelPrincipal.TabIndex = 3;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Century Gothic", 36F);
+            label7.ForeColor = Color.Crimson;
+            label7.Location = new Point(65, 18);
+            label7.Name = "label7";
+            label7.Size = new Size(394, 58);
+            label7.TabIndex = 9;
+            label7.Text = "Registrar Evento";
             // 
             // cbMesEvento
             // 
+            cbMesEvento.BackColor = Color.White;
             cbMesEvento.DropDownStyle = ComboBoxStyle.DropDownList;
             cbMesEvento.FormattingEnabled = true;
             cbMesEvento.Items.AddRange(new object[] { "ENE", "FEB", "MAR", "ABR", "MAY", "JUN", "JUL", "AGO", "SEP", "OCT", "NOV", "DIC" });
-            cbMesEvento.Location = new Point(213, 57);
+            cbMesEvento.Location = new Point(189, 105);
             cbMesEvento.Name = "cbMesEvento";
             cbMesEvento.Size = new Size(250, 23);
             cbMesEvento.TabIndex = 1;
             // 
             // cbDivisionEvento
             // 
+            cbDivisionEvento.BackColor = Color.White;
             cbDivisionEvento.DropDownStyle = ComboBoxStyle.DropDownList;
             cbDivisionEvento.FormattingEnabled = true;
             cbDivisionEvento.Items.AddRange(new object[] { "Clinicos", "Industria", "Investigacion", "Servicios" });
-            cbDivisionEvento.Location = new Point(213, 202);
+            cbDivisionEvento.Location = new Point(189, 250);
             cbDivisionEvento.Name = "cbDivisionEvento";
             cbDivisionEvento.Size = new Size(250, 23);
             cbDivisionEvento.TabIndex = 6;
             // 
             // txtNumeroEvento
             // 
-            txtNumeroEvento.Location = new Point(213, 173);
+            txtNumeroEvento.Location = new Point(189, 221);
             txtNumeroEvento.Name = "txtNumeroEvento";
             txtNumeroEvento.Size = new Size(250, 23);
             txtNumeroEvento.TabIndex = 5;
             // 
             // txtConvocanteEvento
             // 
-            txtConvocanteEvento.Location = new Point(213, 144);
+            txtConvocanteEvento.Location = new Point(189, 192);
             txtConvocanteEvento.Name = "txtConvocanteEvento";
             txtConvocanteEvento.Size = new Size(250, 23);
             txtConvocanteEvento.TabIndex = 4;
             // 
             // txtEstadoEvento
             // 
-            txtEstadoEvento.Location = new Point(213, 115);
+            txtEstadoEvento.Location = new Point(189, 163);
             txtEstadoEvento.Name = "txtEstadoEvento";
             txtEstadoEvento.Size = new Size(250, 23);
             txtEstadoEvento.TabIndex = 3;
@@ -155,7 +172,7 @@
             // 
             // txtDiaEvento
             // 
-            txtDiaEvento.Location = new Point(213, 86);
+            txtDiaEvento.Location = new Point(189, 134);
             txtDiaEvento.Name = "txtDiaEvento";
             txtDiaEvento.Size = new Size(250, 23);
             txtDiaEvento.TabIndex = 2;
@@ -164,7 +181,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(158, 210);
+            label6.Location = new Point(134, 258);
             label6.Name = "label6";
             label6.Size = new Size(49, 15);
             label6.TabIndex = 8;
@@ -173,7 +190,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(101, 181);
+            label5.Location = new Point(77, 229);
             label5.Name = "label5";
             label5.Size = new Size(106, 15);
             label5.TabIndex = 7;
@@ -182,7 +199,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(136, 152);
+            label4.Location = new Point(112, 200);
             label4.Name = "label4";
             label4.Size = new Size(71, 15);
             label4.TabIndex = 6;
@@ -191,7 +208,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(165, 123);
+            label3.Location = new Point(141, 171);
             label3.Name = "label3";
             label3.Size = new Size(42, 15);
             label3.TabIndex = 5;
@@ -200,7 +217,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(183, 94);
+            label2.Location = new Point(159, 142);
             label2.Name = "label2";
             label2.Size = new Size(24, 15);
             label2.TabIndex = 4;
@@ -209,17 +226,39 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(178, 64);
+            label1.Location = new Point(154, 112);
             label1.Name = "label1";
             label1.Size = new Size(29, 15);
             label1.TabIndex = 3;
             label1.Text = "Mes";
             // 
+            // panelstv1
+            // 
+            panelstv1.ColorBottom = Color.FromArgb(6, 159, 210);
+            panelstv1.ColorTop = Color.FromArgb(0, 72, 131);
+            panelstv1.Dock = DockStyle.Top;
+            panelstv1.Location = new Point(0, 0);
+            panelstv1.Name = "panelstv1";
+            panelstv1.Size = new Size(660, 12);
+            panelstv1.TabIndex = 46;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(59, 167, 198);
+            panel2.Dock = DockStyle.Bottom;
+            panel2.Location = new Point(0, 405);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(660, 29);
+            panel2.TabIndex = 47;
+            // 
             // RegistroNombreEvento
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.White;
+            ClientSize = new Size(660, 434);
+            Controls.Add(panel2);
+            Controls.Add(panelstv1);
             Controls.Add(panelPrincipal);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -249,5 +288,8 @@
         private ControlSTV.ButtonSTV btnCancelarRegistro;
         private ComboBox cbDivisionEvento;
         private ComboBox cbMesEvento;
+        private ControlSTV.PanelSTV panelstv1;
+        private Label label7;
+        private Panel panel2;
     }
 }
