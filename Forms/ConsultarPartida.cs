@@ -18,8 +18,6 @@ namespace GobData
             partidas = new Partidas(conexion);
             // Obtener el nombre del evento
             ObtenerNombreEvento(nombreEvento);
-            // Llamar al metodo para llenar el DGV
-            CargarPartidasDGV(nombreEvento);
         }
 
         // Funcionalidad en los botones
@@ -33,39 +31,16 @@ namespace GobData
         private void btnAgregarPartida_Click(object sender, EventArgs e)
         {
             RegistroPartida registroPartida = new RegistroPartida(IdEventoPartida);
-            //gistroPartida.FormClosed += new FormClosedEventHandler(AgregarProductoForm_FormClosed);
+            registroPartida.FormClosed += new FormClosedEventHandler(AgregarProductoForm_FormClosed);
             registroPartida.Show();
         }
 
-        /*
         private void AgregarProductoForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             // Aquí actualizas los productos después de que se cierre la ventana de agregar producto
-            CargarProductos();
+            CargarPartidasDGV(IdEventoPartida);
         }
 
-        private void CargarProductos()
-        {
-            // Código para cargar y actualizar la lista de productos
-        }
-        */
-
-
-        // Llenar el DGView con la información de las partidas
-        private void CargarPartidasDGV(ParametrosNombreEvento idEvento)
-        {
-            try
-            {
-                DataTable dtAllDeparture = partidas.GetSpecificDeparture(idEvento.IdEvento);
-                dgDatosPartida.DataSource = dtAllDeparture;
-
-                FormUtilities.OcultarPrimeraColumna(dgDatosPartida);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error: {ex.Message}");
-            }
-        }
 
         // Generar el titulo del form
         private void ObtenerNombreEvento(ParametrosNombreEvento evento)
@@ -75,8 +50,8 @@ namespace GobData
                 IdEventoPartida = evento.IdEvento;
                 string mes = evento.Mes;
                 string dia = Convert.ToString(evento.Dia);
-                string estado = evento.Estado;
-                string convocante = evento.Convocante;
+                string estado = evento.Estado.Replace(" ", "");
+                string convocante = evento.Convocante.Replace(" ","");
                 string numeroEvento = evento.NumeroEvento;
 
                 lblTituloPartida.Text = mes + "-" + dia + "-" + estado + "-" + convocante + "-" + numeroEvento;
@@ -85,6 +60,28 @@ namespace GobData
             // Centrar Label
             lblTituloPartida.Left = (panelNombreEvento.Width - lblTituloPartida.Width) / 2;
             lblTituloPartida.Top = (panelNombreEvento.Height - lblTituloPartida.Height) / 2;
+
+            // Llenar el DGView
+            CargarPartidasDGV(IdEventoPartida);
         }
+
+
+        // Llenar el DGView con la información de las partidas
+        private void CargarPartidasDGV(string IdEventoPartidaSeleccionada)
+        {
+            try
+            {
+                DataTable dtAllDeparture = partidas.GetSpecificDeparture(IdEventoPartidaSeleccionada);
+                dgDatosPartida.DataSource = dtAllDeparture;
+
+                FormUtilities.OcultarPrimeraColumna(dgDatosPartida);
+                dgDatosPartida.Columns[16].Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
     }
 }
