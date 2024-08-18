@@ -4,6 +4,7 @@
     public class ParametrosNombreEvento
     {
         // Propiedades del objeto ParametrosNombreEvento
+        public string IdEvento { get; set; }
         public string Mes { get; set; }
         public int Dia { get; set; }
         public string Estado { get; set; }
