@@ -13,7 +13,7 @@ namespace GobData
         }
 
 
-        // Mostrar todos los eventos que pertenezcan a una division y/o contengan una palabra en especifico
+        // Metodo para mostrar todos los eventos que pertenezcan a una division y/o contengan una palabra en especifico
         public DataTable SearchSpecificEventName(string divisionSeleccionada, string textoBusqueda)
         {
             DataTable dataTable = new DataTable();

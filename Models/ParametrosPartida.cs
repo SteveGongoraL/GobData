@@ -1,7 +1,9 @@
 ﻿namespace GobData
 {
+    // Objeto para almacenar las propiedades de una Partida
     public class ParametrosPartida
     {
+        // Propiedades del objeto ParametrosPartida
         public int NumeroPartida { get; set; }
         public string Descripcion { get; set; }
         public int CantidadMinima { get; set; }

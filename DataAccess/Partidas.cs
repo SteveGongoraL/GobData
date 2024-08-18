@@ -11,15 +11,15 @@ namespace GobData
             this.connectionString = connectionString;
         }
 
-        // Insertar los datos de la partida
+        // Metodo para insertar los datos de la partida
         public void InsertPartida(ParametrosPartida parametrosPartida)
         {
             using (MySqlConnection conexionBD = new MySqlConnection(connectionString))
             {
                 string consulta = @"INSERT INTO PartidasEvento
-                             (N_Partida, Descripcion, Cant_Min, Cant_Max, Unidad_Medida, Se_Ofrece, Marca, Catalogo, Pais_Origen, Fabricante, Costo_Unitario, Moneda, Costo_Nacional, Porcentaje_Ganancia, Total_Unitario, NombrePartID)
-                              VALUES
-                              (@N_Partida, @Descripcion, @Cant_Min, @Cant_Max, @Unidad_Medida, @Se_Ofrece, @Marca, @Catalogo, @Pais_Origen, @Fabricante, @Costo_Unitario, @Moneda, @Costo_Nacional, @Porcentaje_Ganancia, @Total_Unitario, @NombrePartID);";
+                            (N_Partida, Descripcion, Cant_Min, Cant_Max, Unidad_Medida, Se_Ofrece, Marca, Catalogo, Pais_Origen, Fabricante, Costo_Unitario, Moneda, Costo_Nacional, Porcentaje_Ganancia, Total_Unitario, NombrePartID)
+                            VALUES
+                            (@N_Partida, @Descripcion, @Cant_Min, @Cant_Max, @Unidad_Medida, @Se_Ofrece, @Marca, @Catalogo, @Pais_Origen, @Fabricante, @Costo_Unitario, @Moneda, @Costo_Nacional, @Porcentaje_Ganancia, @Total_Unitario, @NombrePartID);";
 
                 using (MySqlCommand comando = new MySqlCommand(consulta, conexionBD))
                 {
