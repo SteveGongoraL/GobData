@@ -33,21 +33,21 @@
             btnEliminarPartida = new ControlSTV.ButtonSTV();
             btnAgregarPartida = new ControlSTV.ButtonSTV();
             btnFinalizarPartida = new ControlSTV.ButtonSTV();
-            dgDatosPartida = new DataGridView();
+            dgvDatosPartida = new DataGridView();
             groupBox1 = new GroupBox();
             txtBusquedaPartida = new TextBox();
             btnEditarPartida = new ControlSTV.ButtonSTV();
             groupBox2 = new GroupBox();
-            dgDocumentosPartida = new DataGridView();
+            dgvDocumentosPartida = new DataGridView();
             panel1 = new Panel();
             lblPruebas66 = new Label();
             panel2 = new Panel();
             panelstv1 = new ControlSTV.PanelSTV();
             panelNombreEvento = new Panel();
-            ((System.ComponentModel.ISupportInitialize)dgDatosPartida).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDatosPartida).BeginInit();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgDocumentosPartida).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDocumentosPartida).BeginInit();
             panel1.SuspendLayout();
             panelNombreEvento.SuspendLayout();
             SuspendLayout();
@@ -122,25 +122,25 @@
             btnFinalizarPartida.UseVisualStyleBackColor = false;
             btnFinalizarPartida.Click += btnFinalizarPartida_Click;
             // 
-            // dgDatosPartida
+            // dgvDatosPartida
             // 
-            dgDatosPartida.AllowUserToAddRows = false;
-            dgDatosPartida.BackgroundColor = SystemColors.GradientActiveCaption;
-            dgDatosPartida.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgDatosPartida.Location = new Point(16, 54);
-            dgDatosPartida.Name = "dgDatosPartida";
-            dgDatosPartida.ReadOnly = true;
-            dgDatosPartida.RowHeadersVisible = false;
-            dgDatosPartida.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgDatosPartida.Size = new Size(421, 214);
-            dgDatosPartida.TabIndex = 8;
+            dgvDatosPartida.AllowUserToAddRows = false;
+            dgvDatosPartida.BackgroundColor = SystemColors.GradientActiveCaption;
+            dgvDatosPartida.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDatosPartida.Location = new Point(16, 54);
+            dgvDatosPartida.Name = "dgvDatosPartida";
+            dgvDatosPartida.ReadOnly = true;
+            dgvDatosPartida.RowHeadersVisible = false;
+            dgvDatosPartida.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvDatosPartida.Size = new Size(421, 214);
+            dgvDatosPartida.TabIndex = 8;
             // 
             // groupBox1
             // 
             groupBox1.BackColor = SystemColors.Control;
             groupBox1.Controls.Add(txtBusquedaPartida);
             groupBox1.Controls.Add(btnEditarPartida);
-            groupBox1.Controls.Add(dgDatosPartida);
+            groupBox1.Controls.Add(dgvDatosPartida);
             groupBox1.Controls.Add(btnAgregarPartida);
             groupBox1.Controls.Add(btnEliminarPartida);
             groupBox1.Location = new Point(35, 79);
@@ -175,11 +175,12 @@
             btnEditarPartida.Text = "Editar";
             btnEditarPartida.TextColor = Color.Black;
             btnEditarPartida.UseVisualStyleBackColor = false;
+            btnEditarPartida.Click += btnEditarPartida_Click;
             // 
             // groupBox2
             // 
             groupBox2.BackColor = SystemColors.Control;
-            groupBox2.Controls.Add(dgDocumentosPartida);
+            groupBox2.Controls.Add(dgvDocumentosPartida);
             groupBox2.Location = new Point(496, 79);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(323, 316);
@@ -187,17 +188,17 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Agregar Documentos";
             // 
-            // dgDocumentosPartida
+            // dgvDocumentosPartida
             // 
-            dgDocumentosPartida.AllowUserToAddRows = false;
-            dgDocumentosPartida.BackgroundColor = SystemColors.GradientActiveCaption;
-            dgDocumentosPartida.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgDocumentosPartida.Location = new Point(40, 54);
-            dgDocumentosPartida.Name = "dgDocumentosPartida";
-            dgDocumentosPartida.ReadOnly = true;
-            dgDocumentosPartida.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgDocumentosPartida.Size = new Size(244, 199);
-            dgDocumentosPartida.TabIndex = 9;
+            dgvDocumentosPartida.AllowUserToAddRows = false;
+            dgvDocumentosPartida.BackgroundColor = SystemColors.GradientActiveCaption;
+            dgvDocumentosPartida.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDocumentosPartida.Location = new Point(40, 54);
+            dgvDocumentosPartida.Name = "dgvDocumentosPartida";
+            dgvDocumentosPartida.ReadOnly = true;
+            dgvDocumentosPartida.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvDocumentosPartida.Size = new Size(244, 199);
+            dgvDocumentosPartida.TabIndex = 9;
             // 
             // panel1
             // 
@@ -264,11 +265,11 @@
             Name = "ConsultarPartida";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Consultar Partida";
-            ((System.ComponentModel.ISupportInitialize)dgDatosPartida).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDatosPartida).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgDocumentosPartida).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDocumentosPartida).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panelNombreEvento.ResumeLayout(false);
@@ -282,10 +283,10 @@
         private ControlSTV.ButtonSTV btnEliminarPartida;
         private ControlSTV.ButtonSTV btnAgregarPartida;
         private ControlSTV.ButtonSTV btnFinalizarPartida;
-        private DataGridView dgDatosPartida;
+        private DataGridView dgvDatosPartida;
         private GroupBox groupBox1;
         private GroupBox groupBox2;
-        private DataGridView dgDocumentosPartida;
+        private DataGridView dgvDocumentosPartida;
         private ControlSTV.ButtonSTV btnEditarPartida;
         private Panel panel1;
         private TextBox txtBusquedaPartida;
