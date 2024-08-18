@@ -8,6 +8,7 @@ namespace GobData
         private ParametrosPartida partidaActual;
         private Partidas partidas;
         string IdEventoPartida;
+        string IdPartidaSeleccionada;
         private bool esEditar;
 
         public RegistroPartida(string IdEvento)
@@ -44,9 +45,24 @@ namespace GobData
             }
             else
             {
-                if(esEditar)
+                if (esEditar)
                 {
-                    MessageBox.Show("Estas editando");
+                    // Recopilar los parametros necesarios
+                    ParametrosPartida parametrosPartida = ObtenerDatosPartida();
+
+                    // Actualizar la infromación
+                    try
+                    {
+                        partidas.UpdateDeparture(parametrosPartida);
+                        MessageBox.Show("Operación realizada con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error: {ex.Message}");
+                    }
+
+                    // Cerrar el formulario
+                    this.Close();
                 }
                 else
                 {
@@ -93,6 +109,7 @@ namespace GobData
                 string tipoMoneda = partidaActual.Moneda;
                 int indexMoneda = cbMoneda.FindString(tipoMoneda);
 
+                IdPartidaSeleccionada = partidaActual.IdPartida.ToString();
                 txtNumeroPartida.Text = partidaActual.NumeroPartida.ToString();
                 txtDescripcionPartida.Text = partidaActual.Descripcion;
                 txtCantidadMinimo.Text = partidaActual.CantidadMinima.ToString();
@@ -133,6 +150,7 @@ namespace GobData
 
             ParametrosPartida parametrosPartida = new ParametrosPartida
             {
+                IdPartida = Convert.ToInt32(IdPartidaSeleccionada),
                 NumeroPartida = Convert.ToInt32(txtNumeroPartida.Text),
                 Descripcion = txtDescripcionPartida.Text.ToUpper(),
                 CantidadMinima = Convert.ToInt32(txtCantidadMinimo.Text),

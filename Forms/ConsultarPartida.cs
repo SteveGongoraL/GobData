@@ -109,7 +109,7 @@ namespace GobData
                 // Creando una instancia de ParametrosPartida
                 ParametrosPartida parametrosPartida = new ParametrosPartida
                 {
-                    //NumeroPartida = Convert.ToInt32(selectedRow.Cells[1].Value),
+                    IdPartida = Convert.ToInt32(selectedRow.Cells["IdPartida"].Value),
                     NumeroPartida = Convert.ToInt32(selectedRow.Cells["N_Partida"].Value),
                     Descripcion = Convert.ToString(selectedRow.Cells["Descripcion"].Value),
                     CantidadMinima = Convert.ToInt32(selectedRow.Cells["Cant_Min"].Value),
@@ -123,8 +123,7 @@ namespace GobData
                     CostoUnitario = Convert.ToDecimal(selectedRow.Cells["Costo_Unitario"].Value),
                     Moneda = Convert.ToString(selectedRow.Cells["Moneda"].Value),
                     CostoNacional = costoNacional,
-                    PorcentajeGanancia = Convert.ToDecimal(selectedRow.Cells["Porcentaje_Ganancia"].Value) * 100,
-                    //IdNombreEvento = Convert.ToInt32(selectedRow.Cells["NombrePartID"].Value)
+                    PorcentajeGanancia = Convert.ToDecimal(selectedRow.Cells["Porcentaje_Ganancia"].Value) * 100
                 };
 
                 return parametrosPartida;
