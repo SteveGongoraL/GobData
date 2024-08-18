@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace GobData
 {
@@ -46,5 +47,41 @@ namespace GobData
             }
             return;
         }
+
+        // Metodo para seleccionar los datos de la partida
+        public DataTable GetSpecificDeparture(string idEventoSeleccionado)
+        {
+            DataTable dataTable = new DataTable();
+            using (MySqlConnection conexionBD = new MySqlConnection(connectionString))
+            {
+                string queryConsulta = "SELECT * FROM PartidasEvento WHERE NombrePartID = @idEventoSeleccionado;";
+
+                try
+                {
+                    using (MySqlCommand comando = new MySqlCommand(queryConsulta, conexionBD))
+                    {
+                        comando.Parameters.Add("@idEventoSeleccionado", MySqlDbType.VarChar).Value = idEventoSeleccionado;
+                        conexionBD.Open();
+                        using (MySqlDataReader reader = comando.ExecuteReader())
+                        {
+                            dataTable.Load(reader);
+                        }
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    // Manejo de excepciones específicas de MySQL
+                    throw new Exception("Error al cargar datos desde MySQL: " + ex.Message);
+                }
+                catch (Exception ex)
+                {
+                    // Manejo de otras excepciones
+                    throw new Exception("Error al cargar datos: " + ex.Message);
+                }
+            }
+            return dataTable;
+        }
+
+
     }
 }
