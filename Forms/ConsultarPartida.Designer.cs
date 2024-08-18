@@ -40,6 +40,7 @@
             groupBox2 = new GroupBox();
             dgDocumentosPartida = new DataGridView();
             panel1 = new Panel();
+            lblPruebas66 = new Label();
             panel2 = new Panel();
             panelstv1 = new ControlSTV.PanelSTV();
             panelNombreEvento = new Panel();
@@ -73,7 +74,7 @@
             btnEliminarPartida.FlatStyle = FlatStyle.Flat;
             btnEliminarPartida.Font = new Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnEliminarPartida.ForeColor = Color.Black;
-            btnEliminarPartida.Location = new Point(139, 274);
+            btnEliminarPartida.Location = new Point(97, 274);
             btnEliminarPartida.Name = "btnEliminarPartida";
             btnEliminarPartida.Size = new Size(82, 36);
             btnEliminarPartida.TabIndex = 6;
@@ -92,7 +93,7 @@
             btnAgregarPartida.FlatStyle = FlatStyle.Flat;
             btnAgregarPartida.Font = new Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnAgregarPartida.ForeColor = Color.Black;
-            btnAgregarPartida.Location = new Point(315, 274);
+            btnAgregarPartida.Location = new Point(273, 274);
             btnAgregarPartida.Name = "btnAgregarPartida";
             btnAgregarPartida.Size = new Size(82, 36);
             btnAgregarPartida.TabIndex = 5;
@@ -112,7 +113,7 @@
             btnFinalizarPartida.FlatStyle = FlatStyle.Flat;
             btnFinalizarPartida.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnFinalizarPartida.ForeColor = Color.Black;
-            btnFinalizarPartida.Location = new Point(320, 10);
+            btnFinalizarPartida.Location = new Point(320, 6);
             btnFinalizarPartida.Name = "btnFinalizarPartida";
             btnFinalizarPartida.Size = new Size(147, 36);
             btnFinalizarPartida.TabIndex = 7;
@@ -123,11 +124,15 @@
             // 
             // dgDatosPartida
             // 
+            dgDatosPartida.AllowUserToAddRows = false;
             dgDatosPartida.BackgroundColor = SystemColors.GradientActiveCaption;
             dgDatosPartida.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgDatosPartida.Location = new Point(42, 54);
+            dgDatosPartida.Location = new Point(16, 54);
             dgDatosPartida.Name = "dgDatosPartida";
-            dgDatosPartida.Size = new Size(355, 214);
+            dgDatosPartida.ReadOnly = true;
+            dgDatosPartida.RowHeadersVisible = false;
+            dgDatosPartida.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgDatosPartida.Size = new Size(421, 214);
             dgDatosPartida.TabIndex = 8;
             // 
             // groupBox1
@@ -138,18 +143,18 @@
             groupBox1.Controls.Add(dgDatosPartida);
             groupBox1.Controls.Add(btnAgregarPartida);
             groupBox1.Controls.Add(btnEliminarPartida);
-            groupBox1.Location = new Point(35, 75);
+            groupBox1.Location = new Point(35, 79);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(442, 316);
+            groupBox1.Size = new Size(455, 316);
             groupBox1.TabIndex = 10;
             groupBox1.TabStop = false;
             groupBox1.Text = "Información de Partidas";
             // 
             // txtBusquedaPartida
             // 
-            txtBusquedaPartida.Location = new Point(42, 25);
+            txtBusquedaPartida.Location = new Point(16, 25);
             txtBusquedaPartida.Name = "txtBusquedaPartida";
-            txtBusquedaPartida.Size = new Size(267, 23);
+            txtBusquedaPartida.Size = new Size(293, 23);
             txtBusquedaPartida.TabIndex = 10;
             // 
             // btnEditarPartida
@@ -163,7 +168,7 @@
             btnEditarPartida.FlatStyle = FlatStyle.Flat;
             btnEditarPartida.Font = new Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnEditarPartida.ForeColor = Color.Black;
-            btnEditarPartida.Location = new Point(227, 274);
+            btnEditarPartida.Location = new Point(185, 274);
             btnEditarPartida.Name = "btnEditarPartida";
             btnEditarPartida.Size = new Size(82, 36);
             btnEditarPartida.TabIndex = 9;
@@ -175,7 +180,7 @@
             // 
             groupBox2.BackColor = SystemColors.Control;
             groupBox2.Controls.Add(dgDocumentosPartida);
-            groupBox2.Location = new Point(496, 75);
+            groupBox2.Location = new Point(496, 79);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(323, 316);
             groupBox2.TabIndex = 11;
@@ -184,27 +189,40 @@
             // 
             // dgDocumentosPartida
             // 
+            dgDocumentosPartida.AllowUserToAddRows = false;
             dgDocumentosPartida.BackgroundColor = SystemColors.GradientActiveCaption;
             dgDocumentosPartida.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgDocumentosPartida.Location = new Point(40, 54);
             dgDocumentosPartida.Name = "dgDocumentosPartida";
+            dgDocumentosPartida.ReadOnly = true;
+            dgDocumentosPartida.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgDocumentosPartida.Size = new Size(244, 199);
             dgDocumentosPartida.TabIndex = 9;
             // 
             // panel1
             // 
             panel1.BackColor = SystemColors.Control;
+            panel1.Controls.Add(lblPruebas66);
             panel1.Controls.Add(btnFinalizarPartida);
-            panel1.Location = new Point(35, 397);
+            panel1.Location = new Point(35, 401);
             panel1.Name = "panel1";
-            panel1.Size = new Size(784, 54);
+            panel1.Size = new Size(784, 47);
             panel1.TabIndex = 12;
+            // 
+            // lblPruebas66
+            // 
+            lblPruebas66.AutoSize = true;
+            lblPruebas66.Location = new Point(101, 17);
+            lblPruebas66.Name = "lblPruebas66";
+            lblPruebas66.Size = new Size(38, 15);
+            lblPruebas66.TabIndex = 8;
+            lblPruebas66.Text = "label1";
             // 
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(59, 167, 198);
             panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 465);
+            panel2.Location = new Point(0, 459);
             panel2.Name = "panel2";
             panel2.Size = new Size(855, 29);
             panel2.TabIndex = 43;
@@ -233,7 +251,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(855, 494);
+            ClientSize = new Size(855, 488);
             Controls.Add(panelNombreEvento);
             Controls.Add(panelstv1);
             Controls.Add(panel2);
@@ -252,6 +270,7 @@
             groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgDocumentosPartida).EndInit();
             panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             panelNombreEvento.ResumeLayout(false);
             panelNombreEvento.PerformLayout();
             ResumeLayout(false);
@@ -273,5 +292,6 @@
         private Panel panel2;
         private ControlSTV.PanelSTV panelstv1;
         private Panel panelNombreEvento;
+        private Label lblPruebas66;
     }
 }

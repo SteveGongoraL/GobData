@@ -1,35 +1,28 @@
-﻿namespace GobData
+﻿using GobData.Utilities;
+using System.Configuration;
+using System.Data;
+
+namespace GobData
 {
     public partial class ConsultarPartida : Form
     {
         private ParametrosNombreEvento nombreEvento;
+        private Partidas partidas;
         string IdEventoPartida;
 
         public ConsultarPartida(ParametrosNombreEvento nombreEvento)
         {
             InitializeComponent();
+            // Obtener los datos de la conexion a la Base de Datos
+            string conexion = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+            partidas = new Partidas(conexion);
+            // Obtener el nombre del evento
             ObtenerNombreEvento(nombreEvento);
+            // Llamar al metodo para llenar el DGV
+            CargarPartidasDGV(nombreEvento);
         }
 
-        private void ObtenerNombreEvento(ParametrosNombreEvento evento)
-        {
-            if(evento != null)
-            {
-                IdEventoPartida = evento.IdEvento;
-                string mes = evento.Mes;
-                string dia = Convert.ToString(evento.Dia);
-                string estado = evento.Estado;
-                string convocante = evento.Convocante;
-                string numeroEvento = evento.NumeroEvento;
-
-                lblTituloPartida.Text = mes + "-" + dia + "-" + estado + "-" + convocante + "-" + numeroEvento;
-            }
-
-            // Centrar Label
-            lblTituloPartida.Left = (panelNombreEvento.Width - lblTituloPartida.Width) / 2;
-            lblTituloPartida.Top = (panelNombreEvento.Height - lblTituloPartida.Height) / 2;
-        }
-
+        // Funcionalidad en los botones
         private void btnFinalizarPartida_Click(object sender, EventArgs e)
         {
             Home home = new Home();
@@ -56,5 +49,42 @@
             // Código para cargar y actualizar la lista de productos
         }
         */
+
+
+        // Llenar el DGView con la información de las partidas
+        private void CargarPartidasDGV(ParametrosNombreEvento idEvento)
+        {
+            try
+            {
+                DataTable dtAllDeparture = partidas.GetSpecificDeparture(idEvento.IdEvento);
+                dgDatosPartida.DataSource = dtAllDeparture;
+
+                FormUtilities.OcultarPrimeraColumna(dgDatosPartida);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
+        // Generar el titulo del form
+        private void ObtenerNombreEvento(ParametrosNombreEvento evento)
+        {
+            if(evento != null)
+            {
+                IdEventoPartida = evento.IdEvento;
+                string mes = evento.Mes;
+                string dia = Convert.ToString(evento.Dia);
+                string estado = evento.Estado;
+                string convocante = evento.Convocante;
+                string numeroEvento = evento.NumeroEvento;
+
+                lblTituloPartida.Text = mes + "-" + dia + "-" + estado + "-" + convocante + "-" + numeroEvento;
+            }
+
+            // Centrar Label
+            lblTituloPartida.Left = (panelNombreEvento.Width - lblTituloPartida.Width) / 2;
+            lblTituloPartida.Top = (panelNombreEvento.Height - lblTituloPartida.Height) / 2;
+        }
     }
 }
