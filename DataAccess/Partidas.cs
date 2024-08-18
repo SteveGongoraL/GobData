@@ -40,7 +40,6 @@ namespace GobData
                     comando.Parameters.AddWithValue("@Total_Unitario", parametrosPartida.TotalUnitario);
                     comando.Parameters.AddWithValue("@NombrePartID", parametrosPartida.IdNombreEvento);
 
-
                     conexionBD.Open();
                     comando.ExecuteNonQuery();
                 }

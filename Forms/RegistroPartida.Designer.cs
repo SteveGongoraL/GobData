@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroPartida));
             btnGuardarPartida = new ControlSTV.ButtonSTV();
-            btnCancelarPartida = new ControlSTV.ButtonSTV();
+            btnVolverPartida = new ControlSTV.ButtonSTV();
             txtDescripcionPartida = new TextBox();
             lblEjemplo = new Label();
             txtNumeroPartida = new TextBox();
@@ -83,31 +83,32 @@
             btnGuardarPartida.ForeColor = Color.Black;
             btnGuardarPartida.Location = new Point(260, 9);
             btnGuardarPartida.Name = "btnGuardarPartida";
-            btnGuardarPartida.Size = new Size(82, 36);
+            btnGuardarPartida.Size = new Size(96, 36);
             btnGuardarPartida.TabIndex = 15;
             btnGuardarPartida.Text = "Guardar";
             btnGuardarPartida.TextColor = Color.Black;
             btnGuardarPartida.UseVisualStyleBackColor = false;
             btnGuardarPartida.Click += btnGuardarPartida_Click;
             // 
-            // btnCancelarPartida
+            // btnVolverPartida
             // 
-            btnCancelarPartida.BackColor = Color.FromArgb(254, 143, 143);
-            btnCancelarPartida.BackgroundColor = Color.FromArgb(254, 143, 143);
-            btnCancelarPartida.BorderColor = Color.FromArgb(239, 75, 94);
-            btnCancelarPartida.BorderRadius = 36;
-            btnCancelarPartida.BorderSize = 2;
-            btnCancelarPartida.FlatAppearance.BorderSize = 0;
-            btnCancelarPartida.FlatStyle = FlatStyle.Flat;
-            btnCancelarPartida.Font = new Font("Arial Narrow", 11.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            btnCancelarPartida.ForeColor = Color.Black;
-            btnCancelarPartida.Location = new Point(172, 9);
-            btnCancelarPartida.Name = "btnCancelarPartida";
-            btnCancelarPartida.Size = new Size(82, 36);
-            btnCancelarPartida.TabIndex = 16;
-            btnCancelarPartida.Text = "Cancelar";
-            btnCancelarPartida.TextColor = Color.Black;
-            btnCancelarPartida.UseVisualStyleBackColor = false;
+            btnVolverPartida.BackColor = Color.FromArgb(254, 143, 143);
+            btnVolverPartida.BackgroundColor = Color.FromArgb(254, 143, 143);
+            btnVolverPartida.BorderColor = Color.FromArgb(239, 75, 94);
+            btnVolverPartida.BorderRadius = 36;
+            btnVolverPartida.BorderSize = 2;
+            btnVolverPartida.FlatAppearance.BorderSize = 0;
+            btnVolverPartida.FlatStyle = FlatStyle.Flat;
+            btnVolverPartida.Font = new Font("Arial Narrow", 11.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnVolverPartida.ForeColor = Color.Black;
+            btnVolverPartida.Location = new Point(158, 9);
+            btnVolverPartida.Name = "btnVolverPartida";
+            btnVolverPartida.Size = new Size(96, 36);
+            btnVolverPartida.TabIndex = 16;
+            btnVolverPartida.Text = "Volver";
+            btnVolverPartida.TextColor = Color.Black;
+            btnVolverPartida.UseVisualStyleBackColor = false;
+            btnVolverPartida.Click += btnVolverPartida_Click;
             // 
             // txtDescripcionPartida
             // 
@@ -335,11 +336,11 @@
             // lblTituloRegisto
             // 
             lblTituloRegisto.AutoSize = true;
-            lblTituloRegisto.Font = new Font("Century Gothic", 15.75F);
+            lblTituloRegisto.Font = new Font("Century Gothic", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblTituloRegisto.ForeColor = Color.Crimson;
-            lblTituloRegisto.Location = new Point(168, 11);
+            lblTituloRegisto.Location = new Point(153, 8);
             lblTituloRegisto.Name = "lblTituloRegisto";
-            lblTituloRegisto.Size = new Size(171, 24);
+            lblTituloRegisto.Size = new Size(204, 30);
             lblTituloRegisto.TabIndex = 37;
             lblTituloRegisto.Text = "Registrar Partida";
             // 
@@ -394,7 +395,7 @@
             // 
             panel2.BackColor = Color.White;
             panel2.Controls.Add(btnGuardarPartida);
-            panel2.Controls.Add(btnCancelarPartida);
+            panel2.Controls.Add(btnVolverPartida);
             panel2.Location = new Point(27, 302);
             panel2.Name = "panel2";
             panel2.Size = new Size(515, 54);
@@ -433,6 +434,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(571, 394);
+            ControlBox = false;
             Controls.Add(panel1);
             Controls.Add(panelstv1);
             Controls.Add(panel3);
@@ -455,7 +457,7 @@
         #endregion
 
         private ControlSTV.ButtonSTV btnGuardarPartida;
-        private ControlSTV.ButtonSTV btnCancelarPartida;
+        private ControlSTV.ButtonSTV btnVolverPartida;
         private TextBox txtDescripcionPartida;
         private Label lblEjemplo;
         private TextBox txtNumeroPartida;

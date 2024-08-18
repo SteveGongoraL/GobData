@@ -2,21 +2,32 @@
 {
     public partial class ConsultarPartida : Form
     {
+        private ParametrosNombreEvento nombreEvento;
         string IdEventoPartida;
 
-        public ConsultarPartida(string IdEvento)
+        public ConsultarPartida(ParametrosNombreEvento nombreEvento)
         {
             InitializeComponent();
-            ChecarIdEvento(IdEvento);
+            ObtenerNombreEvento(nombreEvento);
         }
 
-        private void ChecarIdEvento(string idEvento)
+        private void ObtenerNombreEvento(ParametrosNombreEvento evento)
         {
-            if (idEvento != null)
+            if(evento != null)
             {
-                IdEventoPartida = idEvento;
-                lblID.Text = IdEventoPartida;
+                IdEventoPartida = evento.IdEvento;
+                string mes = evento.Mes;
+                string dia = Convert.ToString(evento.Dia);
+                string estado = evento.Estado;
+                string convocante = evento.Convocante;
+                string numeroEvento = evento.NumeroEvento;
+
+                lblTituloPartida.Text = mes + "-" + dia + "-" + estado + "-" + convocante + "-" + numeroEvento;
             }
+
+            // Centrar Label
+            lblTituloPartida.Left = (panelNombreEvento.Width - lblTituloPartida.Width) / 2;
+            lblTituloPartida.Top = (panelNombreEvento.Height - lblTituloPartida.Height) / 2;
         }
 
         private void btnFinalizarPartida_Click(object sender, EventArgs e)

@@ -66,9 +66,11 @@ namespace GobData
                 
                 
                 // Cambiar de ventana
+                /*
                 ConsultarPartida registrarPartida = new ConsultarPartida(Convert.ToString(IdEvento));
                 registrarPartida.Show();
                 this.Hide();
+                */
             }
         }
 

@@ -29,31 +29,38 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultarPartida));
-            lblID = new Label();
+            lblTituloPartida = new Label();
             btnEliminarPartida = new ControlSTV.ButtonSTV();
             btnAgregarPartida = new ControlSTV.ButtonSTV();
             btnFinalizarPartida = new ControlSTV.ButtonSTV();
-            dataGridView1 = new DataGridView();
+            dgDatosPartida = new DataGridView();
             groupBox1 = new GroupBox();
-            groupBox2 = new GroupBox();
-            dataGridView2 = new DataGridView();
+            txtBusquedaPartida = new TextBox();
             btnEditarPartida = new ControlSTV.ButtonSTV();
+            groupBox2 = new GroupBox();
+            dgDocumentosPartida = new DataGridView();
             panel1 = new Panel();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panel2 = new Panel();
+            panelstv1 = new ControlSTV.PanelSTV();
+            panelNombreEvento = new Panel();
+            ((System.ComponentModel.ISupportInitialize)dgDatosPartida).BeginInit();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgDocumentosPartida).BeginInit();
             panel1.SuspendLayout();
+            panelNombreEvento.SuspendLayout();
             SuspendLayout();
             // 
-            // lblID
+            // lblTituloPartida
             // 
-            lblID.AutoSize = true;
-            lblID.Location = new Point(58, 9);
-            lblID.Name = "lblID";
-            lblID.Size = new Size(38, 15);
-            lblID.TabIndex = 0;
-            lblID.Text = "label1";
+            lblTituloPartida.AutoSize = true;
+            lblTituloPartida.Font = new Font("Century Gothic", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTituloPartida.ForeColor = Color.Crimson;
+            lblTituloPartida.Location = new Point(3, 4);
+            lblTituloPartida.Name = "lblTituloPartida";
+            lblTituloPartida.Size = new Size(223, 33);
+            lblTituloPartida.TabIndex = 0;
+            lblTituloPartida.Text = "Nombre Evento";
             // 
             // btnEliminarPartida
             // 
@@ -65,13 +72,13 @@
             btnEliminarPartida.FlatAppearance.BorderSize = 0;
             btnEliminarPartida.FlatStyle = FlatStyle.Flat;
             btnEliminarPartida.Font = new Font("Arial Narrow", 11.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            btnEliminarPartida.ForeColor = Color.White;
-            btnEliminarPartida.Location = new Point(139, 242);
+            btnEliminarPartida.ForeColor = Color.Black;
+            btnEliminarPartida.Location = new Point(139, 274);
             btnEliminarPartida.Name = "btnEliminarPartida";
             btnEliminarPartida.Size = new Size(82, 36);
             btnEliminarPartida.TabIndex = 6;
             btnEliminarPartida.Text = "Eliminar";
-            btnEliminarPartida.TextColor = Color.White;
+            btnEliminarPartida.TextColor = Color.Black;
             btnEliminarPartida.UseVisualStyleBackColor = false;
             // 
             // btnAgregarPartida
@@ -84,13 +91,13 @@
             btnAgregarPartida.FlatAppearance.BorderSize = 0;
             btnAgregarPartida.FlatStyle = FlatStyle.Flat;
             btnAgregarPartida.Font = new Font("Arial Narrow", 11.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            btnAgregarPartida.ForeColor = Color.White;
-            btnAgregarPartida.Location = new Point(315, 242);
+            btnAgregarPartida.ForeColor = Color.Black;
+            btnAgregarPartida.Location = new Point(315, 274);
             btnAgregarPartida.Name = "btnAgregarPartida";
             btnAgregarPartida.Size = new Size(82, 36);
             btnAgregarPartida.TabIndex = 5;
             btnAgregarPartida.Text = "Agregar";
-            btnAgregarPartida.TextColor = Color.White;
+            btnAgregarPartida.TextColor = Color.Black;
             btnAgregarPartida.UseVisualStyleBackColor = false;
             btnAgregarPartida.Click += btnAgregarPartida_Click;
             // 
@@ -103,59 +110,47 @@
             btnFinalizarPartida.BorderSize = 2;
             btnFinalizarPartida.FlatAppearance.BorderSize = 0;
             btnFinalizarPartida.FlatStyle = FlatStyle.Flat;
-            btnFinalizarPartida.Font = new Font("Arial Narrow", 11.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnFinalizarPartida.Font = new Font("Arial", 11.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             btnFinalizarPartida.ForeColor = Color.Black;
-            btnFinalizarPartida.Location = new Point(351, 9);
+            btnFinalizarPartida.Location = new Point(333, 9);
             btnFinalizarPartida.Name = "btnFinalizarPartida";
-            btnFinalizarPartida.Size = new Size(82, 36);
+            btnFinalizarPartida.Size = new Size(118, 36);
             btnFinalizarPartida.TabIndex = 7;
             btnFinalizarPartida.Text = "Finalizar";
             btnFinalizarPartida.TextColor = Color.Black;
             btnFinalizarPartida.UseVisualStyleBackColor = false;
             btnFinalizarPartida.Click += btnFinalizarPartida_Click;
             // 
-            // dataGridView1
+            // dgDatosPartida
             // 
-            dataGridView1.BackgroundColor = Color.LightBlue;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(42, 22);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(355, 214);
-            dataGridView1.TabIndex = 8;
+            dgDatosPartida.BackgroundColor = SystemColors.GradientActiveCaption;
+            dgDatosPartida.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgDatosPartida.Location = new Point(42, 54);
+            dgDatosPartida.Name = "dgDatosPartida";
+            dgDatosPartida.Size = new Size(355, 214);
+            dgDatosPartida.TabIndex = 8;
             // 
             // groupBox1
             // 
-            groupBox1.BackColor = Color.White;
+            groupBox1.BackColor = SystemColors.Control;
+            groupBox1.Controls.Add(txtBusquedaPartida);
             groupBox1.Controls.Add(btnEditarPartida);
-            groupBox1.Controls.Add(dataGridView1);
+            groupBox1.Controls.Add(dgDatosPartida);
             groupBox1.Controls.Add(btnAgregarPartida);
             groupBox1.Controls.Add(btnEliminarPartida);
-            groupBox1.Location = new Point(35, 43);
+            groupBox1.Location = new Point(35, 75);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(442, 294);
+            groupBox1.Size = new Size(442, 316);
             groupBox1.TabIndex = 10;
             groupBox1.TabStop = false;
             groupBox1.Text = "Información de Partidas";
             // 
-            // groupBox2
+            // txtBusquedaPartida
             // 
-            groupBox2.BackColor = Color.White;
-            groupBox2.Controls.Add(dataGridView2);
-            groupBox2.Location = new Point(496, 43);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(323, 294);
-            groupBox2.TabIndex = 11;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Agregar Documentos";
-            // 
-            // dataGridView2
-            // 
-            dataGridView2.BackgroundColor = Color.LightBlue;
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(38, 22);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.Size = new Size(244, 199);
-            dataGridView2.TabIndex = 9;
+            txtBusquedaPartida.Location = new Point(42, 25);
+            txtBusquedaPartida.Name = "txtBusquedaPartida";
+            txtBusquedaPartida.Size = new Size(267, 23);
+            txtBusquedaPartida.TabIndex = 10;
             // 
             // btnEditarPartida
             // 
@@ -167,59 +162,116 @@
             btnEditarPartida.FlatAppearance.BorderSize = 0;
             btnEditarPartida.FlatStyle = FlatStyle.Flat;
             btnEditarPartida.Font = new Font("Arial Narrow", 11.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            btnEditarPartida.ForeColor = Color.White;
-            btnEditarPartida.Location = new Point(227, 242);
+            btnEditarPartida.ForeColor = Color.Black;
+            btnEditarPartida.Location = new Point(227, 274);
             btnEditarPartida.Name = "btnEditarPartida";
             btnEditarPartida.Size = new Size(82, 36);
             btnEditarPartida.TabIndex = 9;
             btnEditarPartida.Text = "Editar";
-            btnEditarPartida.TextColor = Color.White;
+            btnEditarPartida.TextColor = Color.Black;
             btnEditarPartida.UseVisualStyleBackColor = false;
+            // 
+            // groupBox2
+            // 
+            groupBox2.BackColor = SystemColors.Control;
+            groupBox2.Controls.Add(dgDocumentosPartida);
+            groupBox2.Location = new Point(496, 75);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(323, 316);
+            groupBox2.TabIndex = 11;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Agregar Documentos";
+            // 
+            // dgDocumentosPartida
+            // 
+            dgDocumentosPartida.BackgroundColor = SystemColors.GradientActiveCaption;
+            dgDocumentosPartida.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgDocumentosPartida.Location = new Point(40, 54);
+            dgDocumentosPartida.Name = "dgDocumentosPartida";
+            dgDocumentosPartida.Size = new Size(244, 199);
+            dgDocumentosPartida.TabIndex = 9;
             // 
             // panel1
             // 
-            panel1.BackColor = Color.White;
+            panel1.BackColor = SystemColors.Control;
             panel1.Controls.Add(btnFinalizarPartida);
-            panel1.Location = new Point(35, 343);
+            panel1.Location = new Point(35, 397);
             panel1.Name = "panel1";
             panel1.Size = new Size(784, 54);
             panel1.TabIndex = 12;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(59, 167, 198);
+            panel2.Dock = DockStyle.Bottom;
+            panel2.Location = new Point(0, 465);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(855, 29);
+            panel2.TabIndex = 43;
+            // 
+            // panelstv1
+            // 
+            panelstv1.ColorBottom = Color.FromArgb(6, 159, 210);
+            panelstv1.ColorTop = Color.FromArgb(0, 72, 131);
+            panelstv1.Dock = DockStyle.Top;
+            panelstv1.Location = new Point(0, 0);
+            panelstv1.Name = "panelstv1";
+            panelstv1.Size = new Size(855, 12);
+            panelstv1.TabIndex = 44;
+            // 
+            // panelNombreEvento
+            // 
+            panelNombreEvento.BackColor = SystemColors.Control;
+            panelNombreEvento.Controls.Add(lblTituloPartida);
+            panelNombreEvento.Location = new Point(35, 27);
+            panelNombreEvento.Name = "panelNombreEvento";
+            panelNombreEvento.Size = new Size(784, 42);
+            panelNombreEvento.TabIndex = 45;
             // 
             // ConsultarPartida
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(858, 408);
+            BackColor = Color.White;
+            ClientSize = new Size(855, 494);
+            Controls.Add(panelNombreEvento);
+            Controls.Add(panelstv1);
+            Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
-            Controls.Add(lblID);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "ConsultarPartida";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Consultar Partida";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgDatosPartida).EndInit();
             groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgDocumentosPartida).EndInit();
             panel1.ResumeLayout(false);
+            panelNombreEvento.ResumeLayout(false);
+            panelNombreEvento.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private Label lblID;
+        private Label lblTituloPartida;
         private ControlSTV.ButtonSTV btnEliminarPartida;
         private ControlSTV.ButtonSTV btnAgregarPartida;
         private ControlSTV.ButtonSTV btnFinalizarPartida;
-        private DataGridView dataGridView1;
+        private DataGridView dgDatosPartida;
         private GroupBox groupBox1;
         private GroupBox groupBox2;
-        private DataGridView dataGridView2;
+        private DataGridView dgDocumentosPartida;
         private ControlSTV.ButtonSTV btnEditarPartida;
         private Panel panel1;
+        private TextBox txtBusquedaPartida;
+        private Panel panel2;
+        private ControlSTV.PanelSTV panelstv1;
+        private Panel panelNombreEvento;
     }
 }

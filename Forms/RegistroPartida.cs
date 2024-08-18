@@ -76,12 +76,18 @@ namespace GobData
                     MessageBox.Show($"Error: {ex.Message}");
                 }
 
-
-                // Cambiar de ventana
-                ConsultarPartida consultarPartida = new ConsultarPartida(IdEventoPartida);
-                consultarPartida.Show();
-                this.Close();
+                // Limpiar los campos
+                FormUtilities.LimpiarTextBox(panelPrincipal);
             }
+        }
+        private void btnVolverPartida_Click(object sender, EventArgs e)
+        {
+            // Cambiar de ventana
+            /*
+            ConsultarPartida consultarPartida = new ConsultarPartida(IdEventoPartida);
+            consultarPartida.Show();
+            this.Close();
+            */
         }
 
         // Restricciones de datos en los textbox

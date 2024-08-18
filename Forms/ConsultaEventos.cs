@@ -9,7 +9,7 @@ namespace GobData
     {
         private NombreEvento nombreEvento;
         private BuscarDataService buscarDataService;
-        string IdEvento;
+        private ParametrosNombreEvento parametrosNombreEvento;
 
         public ConsultaEventos()
         {
@@ -32,9 +32,19 @@ namespace GobData
         }
         private void btnConsultarRegistro_Click(object sender, EventArgs e)
         {
-            ConsultarPartida registrarPartida = new ConsultarPartida(IdEvento);
-            registrarPartida.Show();
-            this.Hide();
+            // Obtener ParametrosNombreEvento
+            ParametrosNombreEvento nombreEvento = ObtenerNombreEventoSeleccionado();
+
+            if( nombreEvento != null )
+            {
+                ConsultarPartida consultarPartida = new ConsultarPartida(nombreEvento);
+                consultarPartida.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un producto para editar.");
+            }
         }
 
 
@@ -71,6 +81,29 @@ namespace GobData
         }
 
 
+        // Obtener los datos de una fila
+        private ParametrosNombreEvento ObtenerNombreEventoSeleccionado()
+        {
+            if (dgvConsultarEventos.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dgvConsultarEventos.SelectedRows[0];
+                // Creando una instancia de ParametrosNombreEvento
+                ParametrosNombreEvento parametrosNombreEvento = new ParametrosNombreEvento
+                {
+                    IdEvento = Convert.ToString(selectedRow.Cells[0].Value),
+                    Mes = Convert.ToString(selectedRow.Cells[1].Value),
+                    Dia = Convert.ToInt32(selectedRow.Cells[2].Value),
+                    Estado = Convert.ToString(selectedRow.Cells[3].Value),
+                    Convocante = Convert.ToString(selectedRow.Cells[4].Value),
+                    NumeroEvento = Convert.ToString(selectedRow.Cells[5].Value)
+                };
+
+                return parametrosNombreEvento;
+            }
+            return null;
+        }
+
+
         // Mostrar información dependiendo del valor seleccionado en el combobox
         private void cbConsultarEventos_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -79,19 +112,6 @@ namespace GobData
 
             // Cargar la información cada que se cambia de Division
             CargarDatosDGV();
-        }
-
-
-        // Sacar el ID de la fila que esta seleccionada
-        private void dgvConsultarEventos_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dgvConsultarEventos.SelectedRows.Count > 0)
-            {
-                // Obtiene la fila seleccionada
-                DataGridViewRow selectedRow = dgvConsultarEventos.SelectedRows[0];
-                // Obtiene el valor de la columna 1
-                IdEvento = Convert.ToString(selectedRow.Cells[0].Value);
-            }
         }
 
 
