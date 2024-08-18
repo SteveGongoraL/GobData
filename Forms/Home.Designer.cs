@@ -50,7 +50,7 @@
             btnRegistrarEvento.FlatStyle = FlatStyle.Flat;
             btnRegistrarEvento.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnRegistrarEvento.ForeColor = Color.Black;
-            btnRegistrarEvento.Location = new Point(47, 193);
+            btnRegistrarEvento.Location = new Point(70, 193);
             btnRegistrarEvento.Name = "btnRegistrarEvento";
             btnRegistrarEvento.Size = new Size(228, 45);
             btnRegistrarEvento.TabIndex = 0;
@@ -71,7 +71,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.GD_Logo;
-            pictureBox1.Location = new Point(27, 18);
+            pictureBox1.Location = new Point(50, 18);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(269, 144);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -84,9 +84,9 @@
             panel2.Controls.Add(btnConsultarEvento);
             panel2.Controls.Add(pictureBox1);
             panel2.Controls.Add(btnRegistrarEvento);
-            panel2.Location = new Point(77, 27);
+            panel2.Location = new Point(54, 27);
             panel2.Name = "panel2";
-            panel2.Size = new Size(322, 316);
+            panel2.Size = new Size(368, 316);
             panel2.TabIndex = 3;
             // 
             // btnConsultarEvento
@@ -100,7 +100,7 @@
             btnConsultarEvento.FlatStyle = FlatStyle.Flat;
             btnConsultarEvento.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnConsultarEvento.ForeColor = Color.Black;
-            btnConsultarEvento.Location = new Point(47, 244);
+            btnConsultarEvento.Location = new Point(70, 244);
             btnConsultarEvento.Name = "btnConsultarEvento";
             btnConsultarEvento.Size = new Size(228, 45);
             btnConsultarEvento.TabIndex = 3;
