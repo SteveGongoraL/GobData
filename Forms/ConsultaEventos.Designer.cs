@@ -53,7 +53,7 @@
             btnCancelarConsulta.FlatStyle = FlatStyle.Flat;
             btnCancelarConsulta.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCancelarConsulta.ForeColor = Color.Black;
-            btnCancelarConsulta.Location = new Point(67, 334);
+            btnCancelarConsulta.Location = new Point(59, 334);
             btnCancelarConsulta.Name = "btnCancelarConsulta";
             btnCancelarConsulta.Size = new Size(251, 45);
             btnCancelarConsulta.TabIndex = 4;
@@ -73,7 +73,7 @@
             btnConsultarRegistro.FlatStyle = FlatStyle.Flat;
             btnConsultarRegistro.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnConsultarRegistro.ForeColor = Color.Black;
-            btnConsultarRegistro.Location = new Point(335, 334);
+            btnConsultarRegistro.Location = new Point(327, 334);
             btnConsultarRegistro.Name = "btnConsultarRegistro";
             btnConsultarRegistro.Size = new Size(251, 45);
             btnConsultarRegistro.TabIndex = 3;
@@ -91,7 +91,7 @@
             panel1.Controls.Add(cbConsultarEventos);
             panel1.Controls.Add(lblTituloConsultaEventos);
             panel1.Controls.Add(dgvConsultarEventos);
-            panel1.Location = new Point(85, 27);
+            panel1.Location = new Point(81, 27);
             panel1.Name = "panel1";
             panel1.Size = new Size(637, 395);
             panel1.TabIndex = 5;
@@ -99,7 +99,7 @@
             // txtBuscarEventos
             // 
             txtBuscarEventos.BackColor = Color.White;
-            txtBuscarEventos.Location = new Point(67, 79);
+            txtBuscarEventos.Location = new Point(59, 79);
             txtBuscarEventos.Name = "txtBuscarEventos";
             txtBuscarEventos.Size = new Size(408, 23);
             txtBuscarEventos.TabIndex = 8;
@@ -110,7 +110,7 @@
             cbConsultarEventos.DropDownStyle = ComboBoxStyle.DropDownList;
             cbConsultarEventos.FormattingEnabled = true;
             cbConsultarEventos.Items.AddRange(new object[] { "Clinicos", "Industria", "Investigacion", "Servicios", "Todos" });
-            cbConsultarEventos.Location = new Point(481, 79);
+            cbConsultarEventos.Location = new Point(476, 79);
             cbConsultarEventos.Name = "cbConsultarEventos";
             cbConsultarEventos.Size = new Size(105, 23);
             cbConsultarEventos.TabIndex = 7;
@@ -122,7 +122,7 @@
             lblTituloConsultaEventos.BackColor = SystemColors.Control;
             lblTituloConsultaEventos.Font = new Font("Century Gothic", 36F);
             lblTituloConsultaEventos.ForeColor = Color.Crimson;
-            lblTituloConsultaEventos.Location = new Point(67, 6);
+            lblTituloConsultaEventos.Location = new Point(59, 6);
             lblTituloConsultaEventos.Name = "lblTituloConsultaEventos";
             lblTituloConsultaEventos.Size = new Size(160, 58);
             lblTituloConsultaEventos.TabIndex = 6;
@@ -133,7 +133,7 @@
             dgvConsultarEventos.AllowUserToAddRows = false;
             dgvConsultarEventos.BackgroundColor = SystemColors.GradientActiveCaption;
             dgvConsultarEventos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvConsultarEventos.Location = new Point(67, 108);
+            dgvConsultarEventos.Location = new Point(59, 108);
             dgvConsultarEventos.MultiSelect = false;
             dgvConsultarEventos.Name = "dgvConsultarEventos";
             dgvConsultarEventos.ReadOnly = true;

@@ -48,7 +48,7 @@
             btnRegistrarEvento.BorderSize = 2;
             btnRegistrarEvento.FlatAppearance.BorderSize = 0;
             btnRegistrarEvento.FlatStyle = FlatStyle.Flat;
-            btnRegistrarEvento.Font = new Font("Arial Narrow", 15.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnRegistrarEvento.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnRegistrarEvento.ForeColor = Color.Black;
             btnRegistrarEvento.Location = new Point(47, 193);
             btnRegistrarEvento.Name = "btnRegistrarEvento";
@@ -84,7 +84,7 @@
             panel2.Controls.Add(btnConsultarEvento);
             panel2.Controls.Add(pictureBox1);
             panel2.Controls.Add(btnRegistrarEvento);
-            panel2.Location = new Point(75, 27);
+            panel2.Location = new Point(77, 27);
             panel2.Name = "panel2";
             panel2.Size = new Size(322, 316);
             panel2.TabIndex = 3;
@@ -98,7 +98,7 @@
             btnConsultarEvento.BorderSize = 2;
             btnConsultarEvento.FlatAppearance.BorderSize = 0;
             btnConsultarEvento.FlatStyle = FlatStyle.Flat;
-            btnConsultarEvento.Font = new Font("Arial Narrow", 15.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnConsultarEvento.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnConsultarEvento.ForeColor = Color.Black;
             btnConsultarEvento.Location = new Point(47, 244);
             btnConsultarEvento.Name = "btnConsultarEvento";

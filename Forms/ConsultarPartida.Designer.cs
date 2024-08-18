@@ -71,7 +71,7 @@
             btnEliminarPartida.BorderSize = 2;
             btnEliminarPartida.FlatAppearance.BorderSize = 0;
             btnEliminarPartida.FlatStyle = FlatStyle.Flat;
-            btnEliminarPartida.Font = new Font("Arial Narrow", 11.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnEliminarPartida.Font = new Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnEliminarPartida.ForeColor = Color.Black;
             btnEliminarPartida.Location = new Point(139, 274);
             btnEliminarPartida.Name = "btnEliminarPartida";
@@ -90,7 +90,7 @@
             btnAgregarPartida.BorderSize = 2;
             btnAgregarPartida.FlatAppearance.BorderSize = 0;
             btnAgregarPartida.FlatStyle = FlatStyle.Flat;
-            btnAgregarPartida.Font = new Font("Arial Narrow", 11.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnAgregarPartida.Font = new Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnAgregarPartida.ForeColor = Color.Black;
             btnAgregarPartida.Location = new Point(315, 274);
             btnAgregarPartida.Name = "btnAgregarPartida";
@@ -106,15 +106,15 @@
             btnFinalizarPartida.BackColor = Color.LightGreen;
             btnFinalizarPartida.BackgroundColor = Color.LightGreen;
             btnFinalizarPartida.BorderColor = Color.Green;
-            btnFinalizarPartida.BorderRadius = 36;
+            btnFinalizarPartida.BorderRadius = 20;
             btnFinalizarPartida.BorderSize = 2;
             btnFinalizarPartida.FlatAppearance.BorderSize = 0;
             btnFinalizarPartida.FlatStyle = FlatStyle.Flat;
-            btnFinalizarPartida.Font = new Font("Arial", 11.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnFinalizarPartida.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnFinalizarPartida.ForeColor = Color.Black;
-            btnFinalizarPartida.Location = new Point(333, 9);
+            btnFinalizarPartida.Location = new Point(320, 10);
             btnFinalizarPartida.Name = "btnFinalizarPartida";
-            btnFinalizarPartida.Size = new Size(118, 36);
+            btnFinalizarPartida.Size = new Size(147, 36);
             btnFinalizarPartida.TabIndex = 7;
             btnFinalizarPartida.Text = "Finalizar";
             btnFinalizarPartida.TextColor = Color.Black;
@@ -161,7 +161,7 @@
             btnEditarPartida.BorderSize = 2;
             btnEditarPartida.FlatAppearance.BorderSize = 0;
             btnEditarPartida.FlatStyle = FlatStyle.Flat;
-            btnEditarPartida.Font = new Font("Arial Narrow", 11.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnEditarPartida.Font = new Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnEditarPartida.ForeColor = Color.Black;
             btnEditarPartida.Location = new Point(227, 274);
             btnEditarPartida.Name = "btnEditarPartida";
