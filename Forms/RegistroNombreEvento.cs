@@ -57,6 +57,7 @@ namespace GobData
                 try
                 {
                     IdEvento = nombreEvento.InsertEventName(parametrosNombreEvento);
+                    parametrosNombreEvento.IdEvento = Convert.ToString(IdEvento);
                     MessageBox.Show("Operación realizada con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
@@ -66,11 +67,9 @@ namespace GobData
                 
                 
                 // Cambiar de ventana
-                /*
-                ConsultarPartida registrarPartida = new ConsultarPartida(Convert.ToString(IdEvento));
-                registrarPartida.Show();
+                ConsultarPartida consultarPartida = new ConsultarPartida(parametrosNombreEvento);
+                consultarPartida.Show();
                 this.Hide();
-                */
             }
         }
 
