@@ -40,7 +40,6 @@
             groupBox2 = new GroupBox();
             dgvDocumentosPartida = new DataGridView();
             panel1 = new Panel();
-            lblPruebas66 = new Label();
             panel2 = new Panel();
             panelstv1 = new ControlSTV.PanelSTV();
             panelNombreEvento = new Panel();
@@ -81,6 +80,7 @@
             btnEliminarPartida.Text = "Eliminar";
             btnEliminarPartida.TextColor = Color.Black;
             btnEliminarPartida.UseVisualStyleBackColor = false;
+            btnEliminarPartida.Click += btnEliminarPartida_Click;
             // 
             // btnAgregarPartida
             // 
@@ -203,21 +203,11 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.Control;
-            panel1.Controls.Add(lblPruebas66);
             panel1.Controls.Add(btnFinalizarPartida);
             panel1.Location = new Point(35, 401);
             panel1.Name = "panel1";
             panel1.Size = new Size(784, 47);
             panel1.TabIndex = 12;
-            // 
-            // lblPruebas66
-            // 
-            lblPruebas66.AutoSize = true;
-            lblPruebas66.Location = new Point(101, 17);
-            lblPruebas66.Name = "lblPruebas66";
-            lblPruebas66.Size = new Size(38, 15);
-            lblPruebas66.TabIndex = 8;
-            lblPruebas66.Text = "label1";
             // 
             // panel2
             // 
@@ -271,7 +261,6 @@
             groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvDocumentosPartida).EndInit();
             panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             panelNombreEvento.ResumeLayout(false);
             panelNombreEvento.PerformLayout();
             ResumeLayout(false);
@@ -293,6 +282,5 @@
         private Panel panel2;
         private ControlSTV.PanelSTV panelstv1;
         private Panel panelNombreEvento;
-        private Label lblPruebas66;
     }
 }

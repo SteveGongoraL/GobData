@@ -127,7 +127,7 @@ namespace GobData
             }
 
             btnGuardarPartida.Text = "Actualizar";
-            lblTituloRegisto.Text = "Editrar Producto";
+            lblTituloRegisto.Text = "Editar Producto";
         }
 
         // Obtener los datos de la partida

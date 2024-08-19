@@ -40,18 +40,48 @@ namespace GobData
         {
             ParametrosPartida partidaSeleccionada = ObtenerPartidaSeleccionada();
 
-            if(partidaSeleccionada != null)
+            if (partidaSeleccionada != null)
             {
                 RegistroPartida editarPartida = new RegistroPartida(partidaSeleccionada, IdEventoPartida);
                 editarPartida.FormClosed += new FormClosedEventHandler(AgregarProductoForm_FormClosed);
                 editarPartida.Show();
             }
         }
+        private void btnEliminarPartida_Click(object sender, EventArgs e)
+        {
+            if (dgvDatosPartida.SelectedRows.Count > 0)
+            {
+                string idPartidaSeleccionada = dgvDatosPartida.SelectedRows[0].Cells["IdPartida"].Value.ToString();
+                string numeroPartidaSeleccionada = dgvDatosPartida.SelectedRows[0].Cells["N_Partida"].Value.ToString();
+
+                DialogResult eliminarPartida = MessageBox.Show($"¿Estas seguro de eliminar la partida: {numeroPartidaSeleccionada}?", "Confirmación de eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (eliminarPartida == DialogResult.Yes)
+                {
+                    // Eliminar partida
+                    try
+                    {
+                        partidas.DeleteDeparture(idPartidaSeleccionada);
+                        MessageBox.Show("Partida eliminada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error: {ex.Message}");
+                    }
+
+                    // Actualizar las partidas despues de la eliminación
+                    CargarPartidasDGV(IdEventoPartida);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona una fila para eliminar.");
+            }
+        }
 
 
         private void AgregarProductoForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            // Aquí actualizas los productos después de que se cierre la ventana de agregar producto
+            // Actualizar los productos después de que se cierre la ventana de RegistroPartida
             CargarPartidasDGV(IdEventoPartida);
         }
 
