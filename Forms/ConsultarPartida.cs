@@ -12,6 +12,7 @@ namespace GobData
         private BuscarDataService buscarDataService;
         private Partidas partidas;
         string IdEventoPartida;
+        bool isShow;
 
         public ConsultarPartida(ParametrosNombreEvento nombreEvento)
         {
@@ -79,6 +80,10 @@ namespace GobData
                 MessageBox.Show("Por favor, selecciona una fila para eliminar.");
             }
         }
+        private void btnLimpiarPartida_Click(object sender, EventArgs e)
+        {
+            FormUtilities.LimpiarTextBox(gbInfoPartida);
+        }
 
 
         private void AgregarProductoForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -99,6 +104,7 @@ namespace GobData
                 string estado = evento.Estado.Replace(" ", "");
                 string convocante = evento.Convocante.Replace(" ", "");
                 string numeroEvento = evento.NumeroEvento;
+                isShow = evento.IsShown;
 
                 lblTituloPartida.Text = mes + "-" + dia + "-" + estado + "-" + convocante + "-" + numeroEvento;
             }
@@ -109,6 +115,12 @@ namespace GobData
 
             // Llenar el DGView
             CargarPartidasDGV(IdEventoPartida);
+
+            // Mostrar u ocultar img back
+            if(!isShow)
+            {
+                pictureBack.Visible = false;
+            }
         }
 
 
@@ -181,5 +193,14 @@ namespace GobData
                 MessageBox.Show($"Error: {ex.Message}");
             }
         }
+
+        // Imagen para retroceder
+        private void pictureBack_Click(object sender, EventArgs e)
+        {
+            ConsultaEventos consultaEventos = new ConsultaEventos();
+            consultaEventos.Show();
+            this.Hide();
+        }
+
     }
 }

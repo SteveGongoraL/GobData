@@ -46,6 +46,7 @@
             btnRegistrarEvento.BorderColor = Color.FromArgb(59, 167, 198);
             btnRegistrarEvento.BorderRadius = 40;
             btnRegistrarEvento.BorderSize = 2;
+            btnRegistrarEvento.Cursor = Cursors.Hand;
             btnRegistrarEvento.FlatAppearance.BorderSize = 0;
             btnRegistrarEvento.FlatStyle = FlatStyle.Flat;
             btnRegistrarEvento.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -96,6 +97,7 @@
             btnConsultarEvento.BorderColor = Color.FromArgb(59, 167, 198);
             btnConsultarEvento.BorderRadius = 40;
             btnConsultarEvento.BorderSize = 2;
+            btnConsultarEvento.Cursor = Cursors.Hand;
             btnConsultarEvento.FlatAppearance.BorderSize = 0;
             btnConsultarEvento.FlatStyle = FlatStyle.Flat;
             btnConsultarEvento.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);

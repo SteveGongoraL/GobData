@@ -49,6 +49,7 @@
             btnCancelarConsulta.BorderColor = Color.FromArgb(239, 75, 94);
             btnCancelarConsulta.BorderRadius = 40;
             btnCancelarConsulta.BorderSize = 2;
+            btnCancelarConsulta.Cursor = Cursors.Hand;
             btnCancelarConsulta.FlatAppearance.BorderSize = 0;
             btnCancelarConsulta.FlatStyle = FlatStyle.Flat;
             btnCancelarConsulta.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -69,6 +70,7 @@
             btnConsultarRegistro.BorderColor = Color.FromArgb(59, 167, 198);
             btnConsultarRegistro.BorderRadius = 40;
             btnConsultarRegistro.BorderSize = 2;
+            btnConsultarRegistro.Cursor = Cursors.Hand;
             btnConsultarRegistro.FlatAppearance.BorderSize = 0;
             btnConsultarRegistro.FlatStyle = FlatStyle.Flat;
             btnConsultarRegistro.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -107,6 +109,7 @@
             // 
             // cbConsultarEventos
             // 
+            cbConsultarEventos.Cursor = Cursors.Hand;
             cbConsultarEventos.DropDownStyle = ComboBoxStyle.DropDownList;
             cbConsultarEventos.FormattingEnabled = true;
             cbConsultarEventos.Items.AddRange(new object[] { "Clinicos", "Industria", "Investigacion", "Servicios", "Todos" });

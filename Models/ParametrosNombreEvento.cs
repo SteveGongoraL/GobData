@@ -11,5 +11,6 @@
         public string Convocante { get; set; }
         public string NumeroEvento { get; set; }
         public string Division { get; set; }
+        public bool IsShown { get; set; }
     }
 }

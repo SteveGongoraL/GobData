@@ -95,7 +95,8 @@ namespace GobData
                     Dia = Convert.ToInt32(selectedRow.Cells[2].Value),
                     Estado = Convert.ToString(selectedRow.Cells[3].Value),
                     Convocante = Convert.ToString(selectedRow.Cells[4].Value),
-                    NumeroEvento = Convert.ToString(selectedRow.Cells[5].Value)
+                    NumeroEvento = Convert.ToString(selectedRow.Cells[5].Value),
+                    IsShown = true
                 };
 
                 return parametrosNombreEvento;
