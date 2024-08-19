@@ -9,6 +9,7 @@ namespace GobData
     {
         private ParametrosNombreEvento nombreEvento;
         private ParametrosPartida parametrosPartida;
+        private BuscarDataService buscarDataService;
         private Partidas partidas;
         string IdEventoPartida;
 
@@ -18,6 +19,7 @@ namespace GobData
             // Obtener los datos de la conexion a la Base de Datos
             string conexion = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
             partidas = new Partidas(conexion);
+            buscarDataService = new BuscarDataService(conexion);
             // Obtener el nombre del evento
             ObtenerNombreEvento(nombreEvento);
         }
@@ -161,5 +163,23 @@ namespace GobData
             return null;
         }
 
+
+        // Buscador las partidas que contengan una palabra en especifico
+        private void txtBusquedaPartida_TextChanged(object sender, EventArgs e)
+        {
+            string textoBusqueda = txtBusquedaPartida.Text;
+
+            try
+            {
+                DataTable dtSearchSpecificDeparture = buscarDataService.SearchSpecificDeparture(textoBusqueda, IdEventoPartida);
+                dgvDatosPartida.DataSource = dtSearchSpecificDeparture;
+
+                FormUtilities.OcultarPrimeraColumna(dgvDatosPartida);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
     }
 }

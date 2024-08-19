@@ -154,8 +154,9 @@
             // 
             txtBusquedaPartida.Location = new Point(16, 25);
             txtBusquedaPartida.Name = "txtBusquedaPartida";
-            txtBusquedaPartida.Size = new Size(293, 23);
+            txtBusquedaPartida.Size = new Size(315, 23);
             txtBusquedaPartida.TabIndex = 10;
+            txtBusquedaPartida.TextChanged += txtBusquedaPartida_TextChanged;
             // 
             // btnEditarPartida
             // 
