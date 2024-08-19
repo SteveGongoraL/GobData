@@ -76,11 +76,11 @@
             btnGuardarPartida.BackgroundColor = Color.LightSteelBlue;
             btnGuardarPartida.BorderColor = Color.FromArgb(59, 167, 198);
             btnGuardarPartida.BorderRadius = 36;
-            btnGuardarPartida.BorderSize = 2;
+            btnGuardarPartida.BorderSize = 1;
             btnGuardarPartida.Cursor = Cursors.Hand;
             btnGuardarPartida.FlatAppearance.BorderSize = 0;
             btnGuardarPartida.FlatStyle = FlatStyle.Flat;
-            btnGuardarPartida.Font = new Font("Arial Narrow", 11.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnGuardarPartida.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnGuardarPartida.ForeColor = Color.Black;
             btnGuardarPartida.Location = new Point(260, 9);
             btnGuardarPartida.Name = "btnGuardarPartida";
@@ -97,11 +97,11 @@
             btnVolverPartida.BackgroundColor = Color.FromArgb(254, 143, 143);
             btnVolverPartida.BorderColor = Color.FromArgb(239, 75, 94);
             btnVolverPartida.BorderRadius = 36;
-            btnVolverPartida.BorderSize = 2;
+            btnVolverPartida.BorderSize = 1;
             btnVolverPartida.Cursor = Cursors.Hand;
             btnVolverPartida.FlatAppearance.BorderSize = 0;
             btnVolverPartida.FlatStyle = FlatStyle.Flat;
-            btnVolverPartida.Font = new Font("Arial Narrow", 11.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnVolverPartida.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnVolverPartida.ForeColor = Color.Black;
             btnVolverPartida.Location = new Point(158, 9);
             btnVolverPartida.Name = "btnVolverPartida";

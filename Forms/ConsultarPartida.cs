@@ -80,7 +80,7 @@ namespace GobData
                 MessageBox.Show("Por favor, selecciona una fila para eliminar.");
             }
         }
-        private void btnLimpiarPartida_Click(object sender, EventArgs e)
+        private void btnClearPartida_Click(object sender, EventArgs e)
         {
             FormUtilities.LimpiarTextBox(gbInfoPartida);
         }
@@ -117,7 +117,7 @@ namespace GobData
             CargarPartidasDGV(IdEventoPartida);
 
             // Mostrar u ocultar img back
-            if(!isShow)
+            if (!isShow)
             {
                 pictureBack.Visible = false;
             }

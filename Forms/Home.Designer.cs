@@ -45,7 +45,7 @@
             btnRegistrarEvento.BackgroundColor = Color.LightSteelBlue;
             btnRegistrarEvento.BorderColor = Color.FromArgb(59, 167, 198);
             btnRegistrarEvento.BorderRadius = 40;
-            btnRegistrarEvento.BorderSize = 2;
+            btnRegistrarEvento.BorderSize = 1;
             btnRegistrarEvento.Cursor = Cursors.Hand;
             btnRegistrarEvento.FlatAppearance.BorderSize = 0;
             btnRegistrarEvento.FlatStyle = FlatStyle.Flat;
@@ -96,7 +96,7 @@
             btnConsultarEvento.BackgroundColor = Color.LightSteelBlue;
             btnConsultarEvento.BorderColor = Color.FromArgb(59, 167, 198);
             btnConsultarEvento.BorderRadius = 40;
-            btnConsultarEvento.BorderSize = 2;
+            btnConsultarEvento.BorderSize = 1;
             btnConsultarEvento.Cursor = Cursors.Hand;
             btnConsultarEvento.FlatAppearance.BorderSize = 0;
             btnConsultarEvento.FlatStyle = FlatStyle.Flat;

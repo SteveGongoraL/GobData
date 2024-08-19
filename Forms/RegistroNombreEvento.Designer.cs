@@ -56,7 +56,7 @@
             btnGuardarRegistro.BackgroundColor = Color.LightSteelBlue;
             btnGuardarRegistro.BorderColor = Color.FromArgb(59, 167, 198);
             btnGuardarRegistro.BorderRadius = 40;
-            btnGuardarRegistro.BorderSize = 2;
+            btnGuardarRegistro.BorderSize = 1;
             btnGuardarRegistro.Cursor = Cursors.Hand;
             btnGuardarRegistro.FlatAppearance.BorderSize = 0;
             btnGuardarRegistro.FlatStyle = FlatStyle.Flat;
@@ -77,7 +77,7 @@
             btnCancelarRegistro.BackgroundColor = Color.FromArgb(254, 143, 143);
             btnCancelarRegistro.BorderColor = Color.FromArgb(239, 75, 94);
             btnCancelarRegistro.BorderRadius = 40;
-            btnCancelarRegistro.BorderSize = 2;
+            btnCancelarRegistro.BorderSize = 1;
             btnCancelarRegistro.Cursor = Cursors.Hand;
             btnCancelarRegistro.FlatAppearance.BorderSize = 0;
             btnCancelarRegistro.FlatStyle = FlatStyle.Flat;

@@ -48,7 +48,7 @@
             btnCancelarConsulta.BackgroundColor = Color.FromArgb(254, 143, 143);
             btnCancelarConsulta.BorderColor = Color.FromArgb(239, 75, 94);
             btnCancelarConsulta.BorderRadius = 40;
-            btnCancelarConsulta.BorderSize = 2;
+            btnCancelarConsulta.BorderSize = 1;
             btnCancelarConsulta.Cursor = Cursors.Hand;
             btnCancelarConsulta.FlatAppearance.BorderSize = 0;
             btnCancelarConsulta.FlatStyle = FlatStyle.Flat;
@@ -69,7 +69,7 @@
             btnConsultarRegistro.BackgroundColor = Color.LightSteelBlue;
             btnConsultarRegistro.BorderColor = Color.FromArgb(59, 167, 198);
             btnConsultarRegistro.BorderRadius = 40;
-            btnConsultarRegistro.BorderSize = 2;
+            btnConsultarRegistro.BorderSize = 1;
             btnConsultarRegistro.Cursor = Cursors.Hand;
             btnConsultarRegistro.FlatAppearance.BorderSize = 0;
             btnConsultarRegistro.FlatStyle = FlatStyle.Flat;

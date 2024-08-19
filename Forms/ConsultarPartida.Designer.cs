@@ -35,7 +35,7 @@
             btnFinalizarPartida = new ControlSTV.ButtonSTV();
             dgvDatosPartida = new DataGridView();
             gbInfoPartida = new GroupBox();
-            btnLimpiarPartida = new Button();
+            btnClearPartida = new ControlSTV.ButtonSTV();
             txtBusquedaPartida = new TextBox();
             btnEditarPartida = new ControlSTV.ButtonSTV();
             groupBox2 = new GroupBox();
@@ -71,11 +71,11 @@
             btnEliminarPartida.BackgroundColor = Color.FromArgb(254, 143, 143);
             btnEliminarPartida.BorderColor = Color.FromArgb(239, 75, 94);
             btnEliminarPartida.BorderRadius = 36;
-            btnEliminarPartida.BorderSize = 2;
+            btnEliminarPartida.BorderSize = 1;
             btnEliminarPartida.Cursor = Cursors.Hand;
             btnEliminarPartida.FlatAppearance.BorderSize = 0;
             btnEliminarPartida.FlatStyle = FlatStyle.Flat;
-            btnEliminarPartida.Font = new Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnEliminarPartida.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnEliminarPartida.ForeColor = Color.Black;
             btnEliminarPartida.Location = new Point(97, 274);
             btnEliminarPartida.Name = "btnEliminarPartida";
@@ -92,11 +92,11 @@
             btnAgregarPartida.BackgroundColor = Color.LightSteelBlue;
             btnAgregarPartida.BorderColor = Color.FromArgb(59, 167, 198);
             btnAgregarPartida.BorderRadius = 36;
-            btnAgregarPartida.BorderSize = 2;
+            btnAgregarPartida.BorderSize = 1;
             btnAgregarPartida.Cursor = Cursors.Hand;
             btnAgregarPartida.FlatAppearance.BorderSize = 0;
             btnAgregarPartida.FlatStyle = FlatStyle.Flat;
-            btnAgregarPartida.Font = new Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAgregarPartida.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnAgregarPartida.ForeColor = Color.Black;
             btnAgregarPartida.Location = new Point(273, 274);
             btnAgregarPartida.Name = "btnAgregarPartida";
@@ -112,12 +112,12 @@
             btnFinalizarPartida.BackColor = Color.LightGreen;
             btnFinalizarPartida.BackgroundColor = Color.LightGreen;
             btnFinalizarPartida.BorderColor = Color.Green;
-            btnFinalizarPartida.BorderRadius = 20;
-            btnFinalizarPartida.BorderSize = 2;
+            btnFinalizarPartida.BorderRadius = 5;
+            btnFinalizarPartida.BorderSize = 1;
             btnFinalizarPartida.Cursor = Cursors.Hand;
             btnFinalizarPartida.FlatAppearance.BorderSize = 0;
             btnFinalizarPartida.FlatStyle = FlatStyle.Flat;
-            btnFinalizarPartida.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnFinalizarPartida.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnFinalizarPartida.ForeColor = Color.Black;
             btnFinalizarPartida.Location = new Point(320, 6);
             btnFinalizarPartida.Name = "btnFinalizarPartida";
@@ -144,7 +144,7 @@
             // gbInfoPartida
             // 
             gbInfoPartida.BackColor = SystemColors.Control;
-            gbInfoPartida.Controls.Add(btnLimpiarPartida);
+            gbInfoPartida.Controls.Add(btnClearPartida);
             gbInfoPartida.Controls.Add(txtBusquedaPartida);
             gbInfoPartida.Controls.Add(btnEditarPartida);
             gbInfoPartida.Controls.Add(dgvDatosPartida);
@@ -157,17 +157,26 @@
             gbInfoPartida.TabStop = false;
             gbInfoPartida.Text = "Información de Partidas";
             // 
-            // btnLimpiarPartida
+            // btnClearPartida
             // 
-            btnLimpiarPartida.BackColor = SystemColors.Control;
-            btnLimpiarPartida.Cursor = Cursors.Hand;
-            btnLimpiarPartida.Location = new Point(337, 25);
-            btnLimpiarPartida.Name = "btnLimpiarPartida";
-            btnLimpiarPartida.Size = new Size(100, 23);
-            btnLimpiarPartida.TabIndex = 2;
-            btnLimpiarPartida.Text = "Limpiar";
-            btnLimpiarPartida.UseVisualStyleBackColor = false;
-            btnLimpiarPartida.Click += btnLimpiarPartida_Click;
+            btnClearPartida.BackColor = Color.FromArgb(162, 219, 250);
+            btnClearPartida.BackgroundColor = Color.FromArgb(162, 219, 250);
+            btnClearPartida.BorderColor = Color.FromArgb(57, 162, 219);
+            btnClearPartida.BorderRadius = 0;
+            btnClearPartida.BorderSize = 1;
+            btnClearPartida.Cursor = Cursors.Hand;
+            btnClearPartida.FlatAppearance.BorderSize = 0;
+            btnClearPartida.FlatStyle = FlatStyle.Flat;
+            btnClearPartida.Font = new Font("Franklin Gothic Book", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnClearPartida.ForeColor = Color.Black;
+            btnClearPartida.Location = new Point(337, 25);
+            btnClearPartida.Name = "btnClearPartida";
+            btnClearPartida.Size = new Size(100, 23);
+            btnClearPartida.TabIndex = 2;
+            btnClearPartida.Text = "Limpiar";
+            btnClearPartida.TextColor = Color.Black;
+            btnClearPartida.UseVisualStyleBackColor = false;
+            btnClearPartida.Click += btnClearPartida_Click;
             // 
             // txtBusquedaPartida
             // 
@@ -184,11 +193,11 @@
             btnEditarPartida.BackgroundColor = Color.LightSteelBlue;
             btnEditarPartida.BorderColor = Color.FromArgb(59, 167, 198);
             btnEditarPartida.BorderRadius = 36;
-            btnEditarPartida.BorderSize = 2;
+            btnEditarPartida.BorderSize = 1;
             btnEditarPartida.Cursor = Cursors.Hand;
             btnEditarPartida.FlatAppearance.BorderSize = 0;
             btnEditarPartida.FlatStyle = FlatStyle.Flat;
-            btnEditarPartida.Font = new Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnEditarPartida.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnEditarPartida.ForeColor = Color.Black;
             btnEditarPartida.Location = new Point(185, 274);
             btnEditarPartida.Name = "btnEditarPartida";
@@ -317,7 +326,7 @@
         private Panel panel2;
         private ControlSTV.PanelSTV panelstv1;
         private Panel panelNombreEvento;
-        private Button btnLimpiarPartida;
         private PictureBox pictureBack;
+        private ControlSTV.ButtonSTV btnClearPartida;
     }
 }
