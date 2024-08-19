@@ -118,11 +118,11 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Century Gothic", 36F);
+            label7.Font = new Font("Century Gothic", 30F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.Crimson;
-            label7.Location = new Point(72, 18);
+            label7.Location = new Point(102, 21);
             label7.Name = "label7";
-            label7.Size = new Size(394, 58);
+            label7.Size = new Size(334, 49);
             label7.TabIndex = 9;
             label7.Text = "Registrar Evento";
             // 
@@ -132,7 +132,7 @@
             cbMesEvento.DropDownStyle = ComboBoxStyle.DropDownList;
             cbMesEvento.FormattingEnabled = true;
             cbMesEvento.Items.AddRange(new object[] { "ENE", "FEB", "MAR", "ABR", "MAY", "JUN", "JUL", "AGO", "SEP", "OCT", "NOV", "DIC" });
-            cbMesEvento.Location = new Point(196, 105);
+            cbMesEvento.Location = new Point(196, 103);
             cbMesEvento.Name = "cbMesEvento";
             cbMesEvento.Size = new Size(250, 23);
             cbMesEvento.TabIndex = 1;
@@ -143,28 +143,28 @@
             cbDivisionEvento.DropDownStyle = ComboBoxStyle.DropDownList;
             cbDivisionEvento.FormattingEnabled = true;
             cbDivisionEvento.Items.AddRange(new object[] { "Clinicos", "Industria", "Investigacion", "Servicios" });
-            cbDivisionEvento.Location = new Point(196, 250);
+            cbDivisionEvento.Location = new Point(196, 248);
             cbDivisionEvento.Name = "cbDivisionEvento";
             cbDivisionEvento.Size = new Size(250, 23);
             cbDivisionEvento.TabIndex = 6;
             // 
             // txtNumeroEvento
             // 
-            txtNumeroEvento.Location = new Point(196, 221);
+            txtNumeroEvento.Location = new Point(196, 219);
             txtNumeroEvento.Name = "txtNumeroEvento";
             txtNumeroEvento.Size = new Size(250, 23);
             txtNumeroEvento.TabIndex = 5;
             // 
             // txtConvocanteEvento
             // 
-            txtConvocanteEvento.Location = new Point(196, 192);
+            txtConvocanteEvento.Location = new Point(196, 190);
             txtConvocanteEvento.Name = "txtConvocanteEvento";
             txtConvocanteEvento.Size = new Size(250, 23);
             txtConvocanteEvento.TabIndex = 4;
             // 
             // txtEstadoEvento
             // 
-            txtEstadoEvento.Location = new Point(196, 163);
+            txtEstadoEvento.Location = new Point(196, 161);
             txtEstadoEvento.Name = "txtEstadoEvento";
             txtEstadoEvento.Size = new Size(250, 23);
             txtEstadoEvento.TabIndex = 3;
@@ -172,7 +172,7 @@
             // 
             // txtDiaEvento
             // 
-            txtDiaEvento.Location = new Point(196, 134);
+            txtDiaEvento.Location = new Point(196, 132);
             txtDiaEvento.Name = "txtDiaEvento";
             txtDiaEvento.Size = new Size(250, 23);
             txtDiaEvento.TabIndex = 2;
@@ -181,7 +181,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(141, 258);
+            label6.Location = new Point(141, 256);
             label6.Name = "label6";
             label6.Size = new Size(49, 15);
             label6.TabIndex = 8;
@@ -190,7 +190,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(84, 229);
+            label5.Location = new Point(84, 227);
             label5.Name = "label5";
             label5.Size = new Size(106, 15);
             label5.TabIndex = 7;
@@ -199,7 +199,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(119, 200);
+            label4.Location = new Point(119, 198);
             label4.Name = "label4";
             label4.Size = new Size(71, 15);
             label4.TabIndex = 6;
@@ -208,7 +208,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(148, 171);
+            label3.Location = new Point(148, 169);
             label3.Name = "label3";
             label3.Size = new Size(42, 15);
             label3.TabIndex = 5;
@@ -217,7 +217,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(166, 142);
+            label2.Location = new Point(166, 140);
             label2.Name = "label2";
             label2.Size = new Size(24, 15);
             label2.TabIndex = 4;
@@ -226,7 +226,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(161, 112);
+            label1.Location = new Point(161, 110);
             label1.Name = "label1";
             label1.Size = new Size(29, 15);
             label1.TabIndex = 3;

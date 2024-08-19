@@ -33,6 +33,7 @@
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
+            label1 = new Label();
             btnConsultarEvento = new ControlSTV.ButtonSTV();
             panelstv1 = new ControlSTV.PanelSTV();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -51,7 +52,7 @@
             btnRegistrarEvento.FlatStyle = FlatStyle.Flat;
             btnRegistrarEvento.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnRegistrarEvento.ForeColor = Color.Black;
-            btnRegistrarEvento.Location = new Point(70, 193);
+            btnRegistrarEvento.Location = new Point(70, 227);
             btnRegistrarEvento.Name = "btnRegistrarEvento";
             btnRegistrarEvento.Size = new Size(228, 45);
             btnRegistrarEvento.TabIndex = 0;
@@ -64,7 +65,7 @@
             // 
             panel1.BackColor = Color.FromArgb(59, 167, 198);
             panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 355);
+            panel1.Location = new Point(0, 376);
             panel1.Name = "panel1";
             panel1.Size = new Size(477, 33);
             panel1.TabIndex = 2;
@@ -74,7 +75,7 @@
             pictureBox1.Image = Properties.Resources.GD_Logo;
             pictureBox1.Location = new Point(50, 18);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(269, 144);
+            pictureBox1.Size = new Size(269, 140);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
@@ -82,13 +83,25 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(242, 242, 244);
+            panel2.Controls.Add(label1);
             panel2.Controls.Add(btnConsultarEvento);
             panel2.Controls.Add(pictureBox1);
             panel2.Controls.Add(btnRegistrarEvento);
             panel2.Location = new Point(54, 27);
             panel2.Name = "panel2";
-            panel2.Size = new Size(368, 316);
+            panel2.Size = new Size(368, 340);
             panel2.TabIndex = 3;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Century Gothic", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Crimson;
+            label1.Location = new Point(31, 169);
+            label1.Name = "label1";
+            label1.Size = new Size(305, 33);
+            label1.TabIndex = 4;
+            label1.Text = "¿Que deseas realizar?";
             // 
             // btnConsultarEvento
             // 
@@ -102,7 +115,7 @@
             btnConsultarEvento.FlatStyle = FlatStyle.Flat;
             btnConsultarEvento.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnConsultarEvento.ForeColor = Color.Black;
-            btnConsultarEvento.Location = new Point(70, 244);
+            btnConsultarEvento.Location = new Point(70, 278);
             btnConsultarEvento.Name = "btnConsultarEvento";
             btnConsultarEvento.Size = new Size(228, 45);
             btnConsultarEvento.TabIndex = 3;
@@ -126,7 +139,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(477, 388);
+            ClientSize = new Size(477, 409);
             Controls.Add(panelstv1);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -138,6 +151,7 @@
             Text = "Home";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -149,5 +163,6 @@
         private Panel panel2;
         private ControlSTV.PanelSTV panelstv1;
         private ControlSTV.ButtonSTV btnConsultarEvento;
+        private Label label1;
     }
 }

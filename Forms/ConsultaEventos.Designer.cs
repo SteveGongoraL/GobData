@@ -123,11 +123,11 @@
             // 
             lblTituloConsultaEventos.AutoSize = true;
             lblTituloConsultaEventos.BackColor = SystemColors.Control;
-            lblTituloConsultaEventos.Font = new Font("Century Gothic", 36F);
+            lblTituloConsultaEventos.Font = new Font("Century Gothic", 33.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblTituloConsultaEventos.ForeColor = Color.Crimson;
-            lblTituloConsultaEventos.Location = new Point(59, 6);
+            lblTituloConsultaEventos.Location = new Point(59, 10);
             lblTituloConsultaEventos.Name = "lblTituloConsultaEventos";
-            lblTituloConsultaEventos.Size = new Size(160, 58);
+            lblTituloConsultaEventos.Size = new Size(148, 55);
             lblTituloConsultaEventos.TabIndex = 6;
             lblTituloConsultaEventos.Text = "Todos";
             // 
