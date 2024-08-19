@@ -118,5 +118,23 @@ namespace GobData
             return;
         }
 
+        // Metodo para eliminar una partida
+        public void DeleteDeparture(string idPartidaSeleccionada)
+        {
+            using (MySqlConnection conexionBD = new MySqlConnection(connectionString))
+            {
+                string consulta = @"DELETE FROM PartidasEvento WHERE IdPartida = @idPartidaSeleccionada;";
+
+                using (MySqlCommand comando = new MySqlCommand(consulta, conexionBD))
+                {
+                    comando.Parameters.AddWithValue("@idPartidaSeleccionada", idPartidaSeleccionada);
+
+                    conexionBD.Open();
+                    comando.ExecuteNonQuery();
+                }
+            }
+            return;
+        }
+
     }
 }
