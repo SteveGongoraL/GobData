@@ -11,6 +11,7 @@ namespace GobData
         private ParametrosPartida parametrosPartida;
         private BuscarDataService buscarDataService;
         private Partidas partidas;
+        private Documentos documentos;
         string IdEventoPartida;
         bool isShow;
 
@@ -19,15 +20,45 @@ namespace GobData
             InitializeComponent();
             // Obtener los datos de la conexion a la Base de Datos
             string conexion = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
-            partidas = new Partidas(conexion);
             buscarDataService = new BuscarDataService(conexion);
+            partidas = new Partidas(conexion);
+            documentos = new Documentos(conexion);
             // Obtener el nombre del evento
             ObtenerNombreEvento(nombreEvento);
         }
 
-        // Funcionalidad en los botones
+        // Funcionalidad en los botones "Información Partidas"
         private void btnFinalizarPartida_Click(object sender, EventArgs e)
         {
+            if (dgvDatosPartida.SelectedRows.Count > 0)
+            {
+                DialogResult savePartida = MessageBox.Show($"¿Quieres guardar la partida en un Excel?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (savePartida == DialogResult.Yes)
+                {
+                    using (SaveFileDialog sfd = new SaveFileDialog())
+                    {
+                        sfd.Filter = "Archivos Excel (*.xlsx)|*.xlsx";
+                        sfd.FileName = lblTituloPartida.Text;
+
+                        if (sfd.ShowDialog() == DialogResult.OK)
+                        {
+                            ExportadorExcel exportador = new ExportadorExcel();
+
+                            // Guardar en Excel
+                            try
+                            {
+                                exportador.ExportToExcel(dgvDatosPartida, sfd.FileName);
+                                MessageBox.Show("La partrida se ha guardado en un Excel.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show($"Error: {ex.Message}");
+                            }
+                        }
+                    }
+                }
+            }
             Home home = new Home();
             home.Show();
             this.Hide();
@@ -57,7 +88,7 @@ namespace GobData
                 string idPartidaSeleccionada = dgvDatosPartida.SelectedRows[0].Cells["IdPartida"].Value.ToString();
                 string numeroPartidaSeleccionada = dgvDatosPartida.SelectedRows[0].Cells["N_Partida"].Value.ToString();
 
-                DialogResult eliminarPartida = MessageBox.Show($"¿Estas seguro de eliminar la partida: {numeroPartidaSeleccionada}?", "Confirmación de eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult eliminarPartida = MessageBox.Show($"¿Estas seguro de eliminar la partida: {numeroPartidaSeleccionada}?", "Confirmación de eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (eliminarPartida == DialogResult.Yes)
                 {
                     // Eliminar partida
@@ -85,7 +116,95 @@ namespace GobData
             FormUtilities.LimpiarTextBox(gbInfoPartida);
         }
 
+        // Funcionalidad en los botones "Agregar Documentos"
+        private void btnAgregarDoc_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            openFileDialog1.Filter = "Todos los archivos (*.*)|*.*";
+            openFileDialog1.FilterIndex = 1;
 
+            // Si se presiona "Abrir" en la ventana emergente
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                // Hacer una instancia y recopilar los parametros necesarios
+                ParametrosDocumentos parametrosDocumentos = new ParametrosDocumentos()
+                {
+                    Nombre = Path.GetFileName(openFileDialog1.FileName),
+                    Direccion = openFileDialog1.FileName,
+                    Documento = File.ReadAllBytes(openFileDialog1.FileName),
+                    NombreDocID = Convert.ToInt32(IdEventoPartida)
+                };
+
+                // Guardar la información
+                try
+                {
+                    documentos.InsertDocuments(parametrosDocumentos);
+                    MessageBox.Show("El documento se ha cargado con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
+
+                // Actualizar el DGView
+                CargarDocumentosDGV(IdEventoPartida);
+            }
+        }
+        private void btnVerDoc_Click(object sender, EventArgs e)
+        {
+            if (dgvDocumentosPartida.SelectedRows.Count > 0)
+            {
+                string idDocumento = dgvDocumentosPartida.SelectedRows[0].Cells["IdDocumento"].Value.ToString();
+
+                // Abrir documento seleccionado
+                try
+                {
+                    documentos.ViewDocument(idDocumento);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona una fila para eliminar.");
+            }
+        }
+        private void btnEliminarDoc_Click(object sender, EventArgs e)
+        {
+            if (dgvDocumentosPartida.SelectedRows.Count > 0)
+            {
+                string idDocumento = dgvDocumentosPartida.SelectedRows[0].Cells["IdDocumento"].Value.ToString();
+                string documentoSeleccionado = dgvDocumentosPartida.SelectedRows[0].Cells["Nombre"].Value.ToString();
+
+                DialogResult eliminarPartida = MessageBox.Show($"¿Estas seguro de eliminar el documento: {documentoSeleccionado}?", "Confirmación de eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (eliminarPartida == DialogResult.Yes)
+                {
+                    // Eliminar partida
+                    try
+                    {
+                        documentos.DeleteDocument(idDocumento);
+                        MessageBox.Show("Documento eliminado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error: {ex.Message}");
+                    }
+
+                    // Actualizar las partidas despues de la eliminación
+                    CargarDocumentosDGV(IdEventoPartida);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona una fila para eliminar.");
+            }
+        }
+
+
+        // Clase para actualizar el DGV
         private void AgregarProductoForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             // Actualizar los productos después de que se cierre la ventana de RegistroPartida
@@ -113,8 +232,9 @@ namespace GobData
             lblTituloPartida.Left = (panelNombreEvento.Width - lblTituloPartida.Width) / 2;
             lblTituloPartida.Top = (panelNombreEvento.Height - lblTituloPartida.Height) / 2;
 
-            // Llenar el DGView
+            // Llenar los DGView
             CargarPartidasDGV(IdEventoPartida);
+            CargarDocumentosDGV(IdEventoPartida);
 
             // Mostrar u ocultar img back
             if (!isShow)
@@ -124,7 +244,8 @@ namespace GobData
         }
 
 
-        // Llenar el DGView con la información de las partidas
+        // Cargar los DGview
+        // DGView de las partidas
         private void CargarPartidasDGV(string IdEventoPartidaSeleccionada)
         {
             try
@@ -134,6 +255,22 @@ namespace GobData
 
                 FormUtilities.OcultarPrimeraColumna(dgvDatosPartida);
                 dgvDatosPartida.Columns[16].Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+        // DGview de los documentos
+        private void CargarDocumentosDGV(string IdEventoPartidaSeleccionada)
+        {
+            try
+            {
+                DataTable dtAllDeparture = documentos.GetSpecificDocument(IdEventoPartidaSeleccionada);
+                dgvDocumentosPartida.DataSource = dtAllDeparture;
+
+                FormUtilities.OcultarPrimeraColumna(dgvDocumentosPartida);
+                dgvDocumentosPartida.Columns[2].Visible = false;
             }
             catch (Exception ex)
             {
