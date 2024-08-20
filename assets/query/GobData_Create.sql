@@ -8,14 +8,6 @@ CREATE TABLE NombreEvento(
     Division VARCHAR(15) NOT NULL
 );
 
-CREATE TABLE DocumentosEvento(
-    IdDocumento INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    Nombre VARCHAR(70) NOT NULL,
-    Documento ARBINARY(MAX) NOT NULL,
-    Extension VARCHAR(100) NOT NULL,
-    NombreDocID INT NOT NULL,
-    CONSTRAINT FK_NombreDoc FOREIGN KEY (NombreDocID) REFERENCES NombreEvento(IdCliente)
-)
 
 CREATE TABLE PartidasEvento(
     IdPartida INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -36,4 +28,14 @@ CREATE TABLE PartidasEvento(
     Total_Unitario DECIMAL(10,3) NOT NULL,
     NombrePartID INT NOT NULL,
     CONSTRAINT FK_NombrePart FOREIGN KEY (NombrePartID) REFERENCES NombreEvento(IdCliente)
-)
+);
+
+
+CREATE TABLE DocumentosEvento(
+    IdDocumento INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(200) NOT NULL,
+    Direccion VARCHAR(500) NOT NULL,
+    Documento LONGBLOB,
+    NombreDocID INT NOT NULL,
+    CONSTRAINT FK_NombreDoc FOREIGN KEY (NombreDocID) REFERENCES NombreEvento(IdCliente)
+);
