@@ -3,8 +3,8 @@ Este proyecto es una aplicación de Windows Forms desarrollada en C# para una em
 
 ## Vista de la aplicación 🖥️
 Aquí puedes ver algunas capturas de pantalla de la aplicación en funcionamiento:
-<img src="https://github.com/user-attachments/assets/73c6b19b-97ea-4248-b2da-cff0de0fc101" alt="GobData" width="450" />
 
+<img src="https://github.com/user-attachments/assets/73c6b19b-97ea-4248-b2da-cff0de0fc101" alt="GobData" width="425" />
 
 ## Requisitos Previos 🔍
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/)
