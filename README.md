@@ -4,7 +4,7 @@ Este proyecto es una aplicación de Windows Forms desarrollada en C# para una em
 ## Vista de la aplicación 🖥️
 Aquí puedes ver algunas capturas de pantalla de la aplicación en funcionamiento:
 
-<img src="https://github.com/user-attachments/assets/73c6b19b-97ea-4248-b2da-cff0de0fc101" alt="GobData" width="425" />
+<img src="https://github.com/user-attachments/assets/40b09864-b3cc-4c88-9d58-7109bf5c354e" alt="Gif de GobData" width="420" loading="lazy"/>
 
 ## Requisitos Previos 🔍
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/)
@@ -64,4 +64,4 @@ Más información sobre Docker y MySQL: [Docker MySQL](https://hub.docker.com/_/
     - En Visual Studio, ve a `Tools` > `NuGet Package Manager` > `Manage NuGet Packages for Solution`.
     - Haz clic en `Restore` para restaurar todos los paquetes NuGet definidos en `packages.config`.
 
-Esto asegurará que todas las dependencias de tu proyecto se descarguen y configuren correctamente.
+Esto asegurará que todas las dependencias se descarguen correctamente.
